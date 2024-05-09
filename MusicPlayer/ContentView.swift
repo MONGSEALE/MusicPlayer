@@ -116,7 +116,7 @@ struct ContentView: View {
         }
         .background(Color(#colorLiteral(red:0.890392157,green:0.9333333333,blue:1,alpha:1)))
             SheetView()
-                .frame(height: showSheet ? 700 : 300) // 드래그 상태에 따라 높이 변경
+                .frame(height: showSheet ? 700 : 70) // 드래그 상태에 따라 높이 변경
                 .cornerRadius(10)
                 .shadow(radius: 5)
                 .onTapGesture {

@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B9C45772BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B9C45762BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 */; };
+		8BAB6E7B2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB6E7A2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 */; };
+		8BAB6E7D2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB6E7C2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 */; };
+		8BD198362BE13D7700276047 /* SheetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD198352BE13D7700276047 /* SheetTest.swift */; };
+		8BD57BA32B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BD57BA12B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 */; };
+		8BD57BA42B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BD57BA22B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 */; };
+		8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */; };
+		8BD9DBF82B8AEFBA0039EB71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */; };
+		8BD9DBFA2B8AEFBB0039EB71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF92B8AEFBB0039EB71 /* Assets.xcassets */; };
+		8BD9DBFD2B8AEFBB0039EB71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */; };
+		8BDD3D342BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD3D332BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 */; };
+		8BDD3D382BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD3D372BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 */; };
+		8BDD3D3E2BE0CD8A0016805C /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDD3D3D2BE0CD8A0016805C /* BottomSheet */; };
+		8BDD3D402BE0CF820016805C /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD3D3F2BE0CF820016805C /* SheetView.swift */; };
+		8BFDAC892B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BFDAC882B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 */; };
+		8BFDAC8B2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BFDAC8A2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 */; };
+		8BFDAC912B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BFDAC902B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8B9C45762BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3"; sourceTree = "<group>"; };
+		8BAB6E7A2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BAB6E7C2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BD198352BE13D7700276047 /* SheetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTest.swift; sourceTree = "<group>"; };
+		8BD57BA12B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BD57BA22B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerApp.swift; sourceTree = "<group>"; };
+		8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8BD9DBF92B8AEFBB0039EB71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8BDD3D332BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BDD3D372BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BDD3D3F2BE0CF820016805C /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		8BFDAC882B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BFDAC8A2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3"; sourceTree = "<group>"; };
+		8BFDAC902B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BD9DBEF2B8AEFBA0039EB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDD3D3E2BE0CD8A0016805C /* BottomSheet in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BD9DBE92B8AEFBA0039EB71 = {
+			isa = PBXGroup;
+			children = (
+				8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */,
+				8BD9DBF32B8AEFBA0039EB71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BD9DBF32B8AEFBA0039EB71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */,
+				8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */,
+				8BDD3D3F2BE0CF820016805C /* SheetView.swift */,
+				8BD9DBF92B8AEFBB0039EB71 /* Assets.xcassets */,
+				8BAB6E7A2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 */,
+				8BAB6E7C2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 */,
+				8BFDAC882B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 */,
+				8BFDAC8A2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 */,
+				8BFDAC902B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 */,
+				8BD57BA12B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 */,
+				8BD57BA22B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 */,
+				8BDD3D332BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 */,
+				8B9C45762BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 */,
+				8BDD3D372BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 */,
+				8BD9DBFB2B8AEFBB0039EB71 /* Preview Content */,
+				8BD198352BE13D7700276047 /* SheetTest.swift */,
+			);
+			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		8BD9DBFB2B8AEFBB0039EB71 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BD9DBF12B8AEFBA0039EB71 /* MusicPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BD9DC002B8AEFBB0039EB71 /* Build configuration list for PBXNativeTarget "MusicPlayer" */;
+			buildPhases = (
+				8BD9DBEE2B8AEFBA0039EB71 /* Sources */,
+				8BD9DBEF2B8AEFBA0039EB71 /* Frameworks */,
+				8BD9DBF02B8AEFBA0039EB71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicPlayer;
+			packageProductDependencies = (
+				8BDD3D3D2BE0CD8A0016805C /* BottomSheet */,
+			);
+			productName = MusicPlayer;
+			productReference = 8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BD9DBEA2B8AEFBA0039EB71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					8BD9DBF12B8AEFBA0039EB71 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = 8BD9DBED2B8AEFBA0039EB71 /* Build configuration list for PBXProject "MusicPlayer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8BD9DBE92B8AEFBA0039EB71;
+			packageReferences = (
+				8BDD3D3C2BE0CD8A0016805C /* XCRemoteSwiftPackageReference "BottomSheet" */,
+			);
+			productRefGroup = 8BD9DBF32B8AEFBA0039EB71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BD9DBF12B8AEFBA0039EB71 /* MusicPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BD9DBF02B8AEFBA0039EB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDD3D342BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 in Resources */,
+				8B9C45772BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 in Resources */,
+				8BDD3D382BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 in Resources */,
+				8BD9DBFD2B8AEFBB0039EB71 /* Preview Assets.xcassets in Resources */,
+				8BD9DBFA2B8AEFBB0039EB71 /* Assets.xcassets in Resources */,
+				8BD57BA42B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 in Resources */,
+				8BFDAC8B2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 in Resources */,
+				8BAB6E7D2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 in Resources */,
+				8BFDAC892B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 in Resources */,
+				8BD57BA32B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 in Resources */,
+				8BFDAC912B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 in Resources */,
+				8BAB6E7B2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BD9DBEE2B8AEFBA0039EB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD9DBF82B8AEFBA0039EB71 /* ContentView.swift in Sources */,
+				8BDD3D402BE0CF820016805C /* SheetView.swift in Sources */,
+				8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */,
+				8BD198362BE13D7700276047 /* SheetTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8BD9DBFE2B8AEFBB0039EB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8BD9DBFF2B8AEFBB0039EB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BD9DC012B8AEFBB0039EB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MusicPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = DR8VUQPNSR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mongseal.MusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8BD9DC022B8AEFBB0039EB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MusicPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = DR8VUQPNSR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mongseal.MusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BD9DBED2B8AEFBA0039EB71 /* Build configuration list for PBXProject "MusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD9DBFE2B8AEFBB0039EB71 /* Debug */,
+				8BD9DBFF2B8AEFBB0039EB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BD9DC002B8AEFBB0039EB71 /* Build configuration list for PBXNativeTarget "MusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD9DC012B8AEFBB0039EB71 /* Debug */,
+				8BD9DC022B8AEFBB0039EB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8BDD3D3C2BE0CD8A0016805C /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8BDD3D3D2BE0CD8A0016805C /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDD3D3C2BE0CD8A0016805C /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8BD9DBEA2B8AEFBA0039EB71 /* Project object */;
+}

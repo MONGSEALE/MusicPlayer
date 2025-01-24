@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 @main
 struct MusicPlayerApp: App {
+    
+   
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
+    
+   
 }

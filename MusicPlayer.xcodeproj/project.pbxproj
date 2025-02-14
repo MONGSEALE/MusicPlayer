@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,46 +11,26 @@
 		8B217CB62CB14CF100EB1D1C /* ModifiedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CB52CB14CF100EB1D1C /* ModifiedButtonView.swift */; };
 		8B217CB82CB14DD700EB1D1C /* PlayListSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CB72CB14DD700EB1D1C /* PlayListSheet.swift */; };
 		8B217CBA2CB14E1500EB1D1C /* PlayListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CB92CB14E1500EB1D1C /* PlayListRowView.swift */; };
-		8B217CBC2CB175D600EB1D1C /* Jamie Miller - Empty Room (Official Visualizer).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CBB2CB175D600EB1D1C /* Jamie Miller - Empty Room (Official Visualizer).mp3 */; };
-		8B217CBE2CB176A300EB1D1C /* Alex Sampson - Play Pretend (Acoustic).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CBD2CB176A300EB1D1C /* Alex Sampson - Play Pretend (Acoustic).mp3 */; };
-		8B217CC02CB1779C00EB1D1C /* Before You Go (Piano Version).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CBF2CB1779C00EB1D1C /* Before You Go (Piano Version).mp3 */; };
-		8B217CC22CB177E100EB1D1C /* Last Eden.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CC12CB177E100EB1D1C /* Last Eden.mp3 */; };
-		8B217CC42CB1780900EB1D1C /* 마크툽(MAKTUB)-찰나가 영원이 될 때(The Eternal Moment)(Piano Tapes).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CC32CB1780900EB1D1C /* 마크툽(MAKTUB)-찰나가 영원이 될 때(The Eternal Moment)(Piano Tapes).mp3 */; };
-		8B217CC62CB1785C00EB1D1C /* 마크툽(MAKTUB)-달 속엔 그대가 있나요, 그대 안엔 달이 있는데 (Moon inside Thee).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CC52CB1785C00EB1D1C /* 마크툽(MAKTUB)-달 속엔 그대가 있나요, 그대 안엔 달이 있는데 (Moon inside Thee).mp3 */; };
-		8B217CC82CB178A400EB1D1C /* 마크툽(MAKTUB)-너를 부르는 바람 (A Pining Wind) (Piano Tapes).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CC72CB178A400EB1D1C /* 마크툽(MAKTUB)-너를 부르는 바람 (A Pining Wind) (Piano Tapes).mp3 */; };
-		8B217CCA2CB178DB00EB1D1C /* 다비치 - 두사랑 (Feat. 매드클라운) [가사-Lyrics].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CC92CB178DB00EB1D1C /* 다비치 - 두사랑 (Feat. 매드클라운) [가사-Lyrics].mp3 */; };
-		8B217CCC2CB1791900EB1D1C /* Davichi(다비치) - You Are My Everything [Eng Sub + Han + Rom] HD.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CCB2CB1791900EB1D1C /* Davichi(다비치) - You Are My Everything [Eng Sub + Han + Rom] HD.mp3 */; };
-		8B217CCE2CB1795000EB1D1C /* My heart is beating (가슴이 뛴다).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CCD2CB1795000EB1D1C /* My heart is beating (가슴이 뛴다).mp3 */; };
-		8B217CD02CB1798900EB1D1C /* Clinton Kane - Fix It to Break It (Official Video).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CCF2CB1798900EB1D1C /* Clinton Kane - Fix It to Break It (Official Video).mp3 */; };
-		8B217CD22CB179D100EB1D1C /* Avril Lavigne - Sk8er Boi (Official Lyric Video).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CD12CB179D100EB1D1C /* Avril Lavigne - Sk8er Boi (Official Lyric Video).mp3 */; };
-		8B217CD42CB17A2B00EB1D1C /* Alexander Stewart - Life At First Sight (Lyric Video).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CD32CB17A2B00EB1D1C /* Alexander Stewart - Life At First Sight (Lyric Video).mp3 */; };
-		8B217CD62CB17A6300EB1D1C /* Thomas Day - not my job anymore (Lyrics).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CD52CB17A6300EB1D1C /* Thomas Day - not my job anymore (Lyrics).mp3 */; };
-		8B217CD82CB17AA300EB1D1C /* Wish You The Best (Guitar Version).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CD72CB17AA300EB1D1C /* Wish You The Best (Guitar Version).mp3 */; };
-		8B217CDA2CB17ADA00EB1D1C /* Lewis Capaldi - A Cure For Minds Unwell (Lyrics).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CD92CB17ADA00EB1D1C /* Lewis Capaldi - A Cure For Minds Unwell (Lyrics).mp3 */; };
-		8B217CDC2CB17B1B00EB1D1C /* 옴므(이창민,이현)  밥만잘먹더라 (가사 첨부).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CDB2CB17B1B00EB1D1C /* 옴므(이창민,이현)  밥만잘먹더라 (가사 첨부).mp3 */; };
-		8B217CDE2CB17B4F00EB1D1C /* 리아(LIA)(ITZY) - 푸른꽃 (Blue Flower) (환혼_ 빛과 그림자 OST) Alchemy of Souls_ Light and Shadow OST Part 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CDD2CB17B4F00EB1D1C /* 리아(LIA)(ITZY) - 푸른꽃 (Blue Flower) (환혼_ 빛과 그림자 OST) Alchemy of Souls_ Light and Shadow OST Part 1.mp3 */; };
-		8B217CE02CB17B9200EB1D1C /* Justin Bieber - Ghost (Visualizer).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CDF2CB17B9200EB1D1C /* Justin Bieber - Ghost (Visualizer).mp3 */; };
-		8B217CE22CB17BCC00EB1D1C /* STAY.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CE12CB17BCC00EB1D1C /* STAY.mp3 */; };
-		8B217CE42CB17C2000EB1D1C /* One Direction - Perfect (Audio).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CE32CB17C2000EB1D1C /* One Direction - Perfect (Audio).mp3 */; };
-		8B217CE62CB17C7A00EB1D1C /* [MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CE52CB17C7A00EB1D1C /* [MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)].mp3 */; };
-		8B217CE82CB17CCF00EB1D1C /* It's Always Been You - Phil Wickham (Lyrics).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B217CE72CB17CCF00EB1D1C /* It's Always Been You - Phil Wickham (Lyrics).mp3 */; };
-		8B217CEA2CB18CF300EB1D1C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CE92CB18CF300EB1D1C /* LoadingView.swift */; };
-		8B9C45772BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B9C45762BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 */; };
-		8BAB6E7B2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB6E7A2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 */; };
-		8BAB6E7D2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB6E7C2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 */; };
-		8BD57BA32B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BD57BA12B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 */; };
-		8BD57BA42B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BD57BA22B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 */; };
+		8B7DF2812D5EDCB6007D534B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7DF2802D5EDCB6007D534B /* RxSwift */; };
+		8B7DF2832D5EDCBA007D534B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7DF2822D5EDCBA007D534B /* RxCocoa */; };
+		8B7DF2862D5EDCF4007D534B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7DF2852D5EDCF4007D534B /* Alamofire */; };
 		8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */; };
 		8BD9DBF82B8AEFBA0039EB71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */; };
-		8BD9DBFA2B8AEFBB0039EB71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF92B8AEFBB0039EB71 /* Assets.xcassets */; };
 		8BD9DBFD2B8AEFBB0039EB71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */; };
-		8BDD3D342BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD3D332BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 */; };
-		8BDD3D382BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD3D372BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 */; };
-		8BDD3D3E2BE0CD8A0016805C /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDD3D3D2BE0CD8A0016805C /* BottomSheet */; };
-		8BFDAC892B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BFDAC882B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 */; };
-		8BFDAC8B2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BFDAC8A2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 */; };
-		8BFDAC912B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BFDAC902B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B7DF28A2D5EEA33007D534B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8B0E80E72CAFE17C00DDF8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -58,63 +38,43 @@
 		8B217CB52CB14CF100EB1D1C /* ModifiedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedButtonView.swift; sourceTree = "<group>"; };
 		8B217CB72CB14DD700EB1D1C /* PlayListSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListSheet.swift; sourceTree = "<group>"; };
 		8B217CB92CB14E1500EB1D1C /* PlayListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListRowView.swift; sourceTree = "<group>"; };
-		8B217CBB2CB175D600EB1D1C /* Jamie Miller - Empty Room (Official Visualizer).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jamie Miller - Empty Room (Official Visualizer).mp3"; sourceTree = "<group>"; };
-		8B217CBD2CB176A300EB1D1C /* Alex Sampson - Play Pretend (Acoustic).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Alex Sampson - Play Pretend (Acoustic).mp3"; sourceTree = "<group>"; };
-		8B217CBF2CB1779C00EB1D1C /* Before You Go (Piano Version).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Before You Go (Piano Version).mp3"; sourceTree = "<group>"; };
-		8B217CC12CB177E100EB1D1C /* Last Eden.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Last Eden.mp3"; sourceTree = "<group>"; };
-		8B217CC32CB1780900EB1D1C /* 마크툽(MAKTUB)-찰나가 영원이 될 때(The Eternal Moment)(Piano Tapes).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "마크툽(MAKTUB)-찰나가 영원이 될 때(The Eternal Moment)(Piano Tapes).mp3"; sourceTree = "<group>"; };
-		8B217CC52CB1785C00EB1D1C /* 마크툽(MAKTUB)-달 속엔 그대가 있나요, 그대 안엔 달이 있는데 (Moon inside Thee).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "마크툽(MAKTUB)-달 속엔 그대가 있나요, 그대 안엔 달이 있는데 (Moon inside Thee).mp3"; sourceTree = "<group>"; };
-		8B217CC72CB178A400EB1D1C /* 마크툽(MAKTUB)-너를 부르는 바람 (A Pining Wind) (Piano Tapes).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "마크툽(MAKTUB)-너를 부르는 바람 (A Pining Wind) (Piano Tapes).mp3"; sourceTree = "<group>"; };
-		8B217CC92CB178DB00EB1D1C /* 다비치 - 두사랑 (Feat. 매드클라운) [가사-Lyrics].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "다비치 - 두사랑 (Feat. 매드클라운) [가사-Lyrics].mp3"; sourceTree = "<group>"; };
-		8B217CCB2CB1791900EB1D1C /* Davichi(다비치) - You Are My Everything [Eng Sub + Han + Rom] HD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Davichi(다비치) - You Are My Everything [Eng Sub + Han + Rom] HD.mp3"; sourceTree = "<group>"; };
-		8B217CCD2CB1795000EB1D1C /* My heart is beating (가슴이 뛴다).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "My heart is beating (가슴이 뛴다).mp3"; sourceTree = "<group>"; };
-		8B217CCF2CB1798900EB1D1C /* Clinton Kane - Fix It to Break It (Official Video).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Clinton Kane - Fix It to Break It (Official Video).mp3"; sourceTree = "<group>"; };
-		8B217CD12CB179D100EB1D1C /* Avril Lavigne - Sk8er Boi (Official Lyric Video).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Avril Lavigne - Sk8er Boi (Official Lyric Video).mp3"; sourceTree = "<group>"; };
-		8B217CD32CB17A2B00EB1D1C /* Alexander Stewart - Life At First Sight (Lyric Video).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Alexander Stewart - Life At First Sight (Lyric Video).mp3"; sourceTree = "<group>"; };
-		8B217CD52CB17A6300EB1D1C /* Thomas Day - not my job anymore (Lyrics).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Thomas Day - not my job anymore (Lyrics).mp3"; sourceTree = "<group>"; };
-		8B217CD72CB17AA300EB1D1C /* Wish You The Best (Guitar Version).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Wish You The Best (Guitar Version).mp3"; sourceTree = "<group>"; };
-		8B217CD92CB17ADA00EB1D1C /* Lewis Capaldi - A Cure For Minds Unwell (Lyrics).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lewis Capaldi - A Cure For Minds Unwell (Lyrics).mp3"; sourceTree = "<group>"; };
-		8B217CDB2CB17B1B00EB1D1C /* 옴므(이창민,이현)  밥만잘먹더라 (가사 첨부).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "옴므(이창민,이현)  밥만잘먹더라 (가사 첨부).mp3"; sourceTree = "<group>"; };
-		8B217CDD2CB17B4F00EB1D1C /* 리아(LIA)(ITZY) - 푸른꽃 (Blue Flower) (환혼_ 빛과 그림자 OST) Alchemy of Souls_ Light and Shadow OST Part 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "리아(LIA)(ITZY) - 푸른꽃 (Blue Flower) (환혼_ 빛과 그림자 OST) Alchemy of Souls_ Light and Shadow OST Part 1.mp3"; sourceTree = "<group>"; };
-		8B217CDF2CB17B9200EB1D1C /* Justin Bieber - Ghost (Visualizer).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Justin Bieber - Ghost (Visualizer).mp3"; sourceTree = "<group>"; };
-		8B217CE12CB17BCC00EB1D1C /* STAY.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = STAY.mp3; sourceTree = "<group>"; };
-		8B217CE32CB17C2000EB1D1C /* One Direction - Perfect (Audio).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "One Direction - Perfect (Audio).mp3"; sourceTree = "<group>"; };
-		8B217CE52CB17C7A00EB1D1C /* [MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)].mp3"; sourceTree = "<group>"; };
-		8B217CE72CB17CCF00EB1D1C /* It's Always Been You - Phil Wickham (Lyrics).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "It's Always Been You - Phil Wickham (Lyrics).mp3"; sourceTree = "<group>"; };
-		8B217CE92CB18CF300EB1D1C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		8B9C45762BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3"; sourceTree = "<group>"; };
-		8BAB6E7A2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3"; sourceTree = "<group>"; };
-		8BAB6E7C2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3"; sourceTree = "<group>"; };
-		8BD57BA12B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3"; sourceTree = "<group>"; };
-		8BD57BA22B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3"; sourceTree = "<group>"; };
 		8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerApp.swift; sourceTree = "<group>"; };
 		8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8BD9DBF92B8AEFBB0039EB71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8BDD3D332BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3"; sourceTree = "<group>"; };
-		8BDD3D372BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3"; sourceTree = "<group>"; };
-		8BFDAC882B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3"; sourceTree = "<group>"; };
-		8BFDAC8A2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3"; sourceTree = "<group>"; };
-		8BFDAC902B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8B1B9CBF2D5CB8DC0068DD85 /* UIkit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIkit; sourceTree = "<group>"; };
+		8BB62FE02D5B251E0017D57A /* Resource */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resource; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8BD9DBEF2B8AEFBA0039EB71 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDD3D3E2BE0CD8A0016805C /* BottomSheet in Frameworks */,
+				8B7DF2862D5EDCF4007D534B /* Alamofire in Frameworks */,
+				8B7DF2832D5EDCBA007D534B /* RxCocoa in Frameworks */,
+				8B7DF2812D5EDCB6007D534B /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B7DF27F2D5EDCB0007D534B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8BD9DBE92B8AEFBA0039EB71 = {
 			isa = PBXGroup;
 			children = (
 				8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */,
+				8B7DF27F2D5EDCB0007D534B /* Frameworks */,
 				8BD9DBF32B8AEFBA0039EB71 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,6 +90,8 @@
 		8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
+				8BB62FE02D5B251E0017D57A /* Resource */,
 				8B0E80E72CAFE17C00DDF8B5 /* Info.plist */,
 				8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */,
 				8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */,
@@ -137,42 +99,7 @@
 				8B217CB92CB14E1500EB1D1C /* PlayListRowView.swift */,
 				8B217CB32CB14CC700EB1D1C /* SongModel.swift */,
 				8B217CB52CB14CF100EB1D1C /* ModifiedButtonView.swift */,
-				8BD9DBF92B8AEFBB0039EB71 /* Assets.xcassets */,
-				8BAB6E7A2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 */,
-				8BAB6E7C2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 */,
-				8BFDAC882B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 */,
-				8BFDAC8A2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 */,
-				8BFDAC902B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 */,
-				8BD57BA12B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 */,
-				8BD57BA22B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 */,
-				8BDD3D332BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 */,
-				8B9C45762BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 */,
-				8BDD3D372BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 */,
-				8B217CBB2CB175D600EB1D1C /* Jamie Miller - Empty Room (Official Visualizer).mp3 */,
-				8B217CBD2CB176A300EB1D1C /* Alex Sampson - Play Pretend (Acoustic).mp3 */,
-				8B217CBF2CB1779C00EB1D1C /* Before You Go (Piano Version).mp3 */,
-				8B217CC12CB177E100EB1D1C /* Last Eden.mp3 */,
-				8B217CC32CB1780900EB1D1C /* 마크툽(MAKTUB)-찰나가 영원이 될 때(The Eternal Moment)(Piano Tapes).mp3 */,
-				8B217CC52CB1785C00EB1D1C /* 마크툽(MAKTUB)-달 속엔 그대가 있나요, 그대 안엔 달이 있는데 (Moon inside Thee).mp3 */,
-				8B217CC72CB178A400EB1D1C /* 마크툽(MAKTUB)-너를 부르는 바람 (A Pining Wind) (Piano Tapes).mp3 */,
-				8B217CC92CB178DB00EB1D1C /* 다비치 - 두사랑 (Feat. 매드클라운) [가사-Lyrics].mp3 */,
-				8B217CCB2CB1791900EB1D1C /* Davichi(다비치) - You Are My Everything [Eng Sub + Han + Rom] HD.mp3 */,
-				8B217CCD2CB1795000EB1D1C /* My heart is beating (가슴이 뛴다).mp3 */,
-				8B217CCF2CB1798900EB1D1C /* Clinton Kane - Fix It to Break It (Official Video).mp3 */,
-				8B217CD12CB179D100EB1D1C /* Avril Lavigne - Sk8er Boi (Official Lyric Video).mp3 */,
-				8B217CD32CB17A2B00EB1D1C /* Alexander Stewart - Life At First Sight (Lyric Video).mp3 */,
-				8B217CD52CB17A6300EB1D1C /* Thomas Day - not my job anymore (Lyrics).mp3 */,
-				8B217CD72CB17AA300EB1D1C /* Wish You The Best (Guitar Version).mp3 */,
-				8B217CD92CB17ADA00EB1D1C /* Lewis Capaldi - A Cure For Minds Unwell (Lyrics).mp3 */,
-				8B217CDB2CB17B1B00EB1D1C /* 옴므(이창민,이현)  밥만잘먹더라 (가사 첨부).mp3 */,
-				8B217CDD2CB17B4F00EB1D1C /* 리아(LIA)(ITZY) - 푸른꽃 (Blue Flower) (환혼_ 빛과 그림자 OST) Alchemy of Souls_ Light and Shadow OST Part 1.mp3 */,
-				8B217CDF2CB17B9200EB1D1C /* Justin Bieber - Ghost (Visualizer).mp3 */,
-				8B217CE12CB17BCC00EB1D1C /* STAY.mp3 */,
-				8B217CE32CB17C2000EB1D1C /* One Direction - Perfect (Audio).mp3 */,
-				8B217CE52CB17C7A00EB1D1C /* [MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)].mp3 */,
-				8B217CE72CB17CCF00EB1D1C /* It's Always Been You - Phil Wickham (Lyrics).mp3 */,
 				8BD9DBFB2B8AEFBB0039EB71 /* Preview Content */,
-				8B217CE92CB18CF300EB1D1C /* LoadingView.swift */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -195,14 +122,21 @@
 				8BD9DBEE2B8AEFBA0039EB71 /* Sources */,
 				8BD9DBEF2B8AEFBA0039EB71 /* Frameworks */,
 				8BD9DBF02B8AEFBA0039EB71 /* Resources */,
+				8B7DF28A2D5EEA33007D534B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
+				8BB62FE02D5B251E0017D57A /* Resource */,
+			);
 			name = MusicPlayer;
 			packageProductDependencies = (
-				8BDD3D3D2BE0CD8A0016805C /* BottomSheet */,
+				8B7DF2802D5EDCB6007D534B /* RxSwift */,
+				8B7DF2822D5EDCBA007D534B /* RxCocoa */,
+				8B7DF2852D5EDCF4007D534B /* Alamofire */,
 			);
 			productName = MusicPlayer;
 			productReference = 8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */;
@@ -233,7 +167,8 @@
 			);
 			mainGroup = 8BD9DBE92B8AEFBA0039EB71;
 			packageReferences = (
-				8BDD3D3C2BE0CD8A0016805C /* XCRemoteSwiftPackageReference "BottomSheet" */,
+				8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */,
+				8B7DF2842D5EDCF4007D534B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8BD9DBF32B8AEFBA0039EB71 /* Products */;
 			projectDirPath = "";
@@ -249,41 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B217CCC2CB1791900EB1D1C /* Davichi(다비치) - You Are My Everything [Eng Sub + Han + Rom] HD.mp3 in Resources */,
-				8B217CD82CB17AA300EB1D1C /* Wish You The Best (Guitar Version).mp3 in Resources */,
-				8BDD3D342BE0BCF30016805C /* Y2meta.app - Let it rain (비야 와라) (320 kbps).mp3 in Resources */,
-				8B217CC82CB178A400EB1D1C /* 마크툽(MAKTUB)-너를 부르는 바람 (A Pining Wind) (Piano Tapes).mp3 in Resources */,
-				8B217CD42CB17A2B00EB1D1C /* Alexander Stewart - Life At First Sight (Lyric Video).mp3 in Resources */,
-				8B217CC62CB1785C00EB1D1C /* 마크툽(MAKTUB)-달 속엔 그대가 있나요, 그대 안엔 달이 있는데 (Moon inside Thee).mp3 in Resources */,
-				8B9C45772BA1444D0091650E /* 케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC.mp3 in Resources */,
-				8B217CE22CB17BCC00EB1D1C /* STAY.mp3 in Resources */,
-				8BDD3D382BE0C5C40016805C /* Y2meta.app - Greatest Time (feat.HuhGak) (내 생애 가장 행복한 시간 (FEAT.허각)) (320 kbps).mp3 in Resources */,
-				8B217CCE2CB1795000EB1D1C /* My heart is beating (가슴이 뛴다).mp3 in Resources */,
-				8B217CDA2CB17ADA00EB1D1C /* Lewis Capaldi - A Cure For Minds Unwell (Lyrics).mp3 in Resources */,
-				8B217CE82CB17CCF00EB1D1C /* It's Always Been You - Phil Wickham (Lyrics).mp3 in Resources */,
-				8B217CDE2CB17B4F00EB1D1C /* 리아(LIA)(ITZY) - 푸른꽃 (Blue Flower) (환혼_ 빛과 그림자 OST) Alchemy of Souls_ Light and Shadow OST Part 1.mp3 in Resources */,
 				8BD9DBFD2B8AEFBB0039EB71 /* Preview Assets.xcassets in Resources */,
-				8B217CD62CB17A6300EB1D1C /* Thomas Day - not my job anymore (Lyrics).mp3 in Resources */,
-				8B217CE62CB17C7A00EB1D1C /* [MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)].mp3 in Resources */,
-				8BD9DBFA2B8AEFBB0039EB71 /* Assets.xcassets in Resources */,
-				8BD57BA42B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps).mp3 in Resources */,
-				8B217CCA2CB178DB00EB1D1C /* 다비치 - 두사랑 (Feat. 매드클라운) [가사-Lyrics].mp3 in Resources */,
-				8B217CE02CB17B9200EB1D1C /* Justin Bieber - Ghost (Visualizer).mp3 in Resources */,
-				8BFDAC8B2B8E12570019489C /* Y2meta.app - [Live Clip] 케이시(Kassy)_'사랑이야' (FOREVER LOVE) (320 kbps).mp3 in Resources */,
-				8BAB6E7D2B8D9E4C0088B599 /* Y2meta.app - 케이시 - 너 밖엔 없더라 _ Kpop _ Lyrics _ 가사 (320 kbps).mp3 in Resources */,
-				8B217CE42CB17C2000EB1D1C /* One Direction - Perfect (Audio).mp3 in Resources */,
-				8BFDAC892B8E0FB60019489C /* Y2meta.app - 케이시(Kassy) - 가을밤 떠난 너 _ 가사 (320 kbps).mp3 in Resources */,
-				8BD57BA32B95F908001BA940 /* Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps).mp3 in Resources */,
-				8B217CBE2CB176A300EB1D1C /* Alex Sampson - Play Pretend (Acoustic).mp3 in Resources */,
-				8B217CC22CB177E100EB1D1C /* Last Eden.mp3 in Resources */,
-				8BFDAC912B8E17DC0019489C /* Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps).mp3 in Resources */,
-				8B217CD22CB179D100EB1D1C /* Avril Lavigne - Sk8er Boi (Official Lyric Video).mp3 in Resources */,
-				8B217CC42CB1780900EB1D1C /* 마크툽(MAKTUB)-찰나가 영원이 될 때(The Eternal Moment)(Piano Tapes).mp3 in Resources */,
-				8BAB6E7B2B8D9D900088B599 /* Y2meta.app - Don Omar - Danza Kuduro (Lyrics) ft. Lucenzo (320 kbps).mp3 in Resources */,
-				8B217CC02CB1779C00EB1D1C /* Before You Go (Piano Version).mp3 in Resources */,
-				8B217CDC2CB17B1B00EB1D1C /* 옴므(이창민,이현)  밥만잘먹더라 (가사 첨부).mp3 in Resources */,
-				8B217CD02CB1798900EB1D1C /* Clinton Kane - Fix It to Break It (Official Video).mp3 in Resources */,
-				8B217CBC2CB175D600EB1D1C /* Jamie Miller - Empty Room (Official Visualizer).mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +200,6 @@
 				8B217CBA2CB14E1500EB1D1C /* PlayListRowView.swift in Sources */,
 				8B217CB82CB14DD700EB1D1C /* PlayListSheet.swift in Sources */,
 				8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */,
-				8B217CEA2CB18CF300EB1D1C /* LoadingView.swift in Sources */,
 				8B217CB62CB14CF100EB1D1C /* ModifiedButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,21 +412,39 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8BDD3D3C2BE0CD8A0016805C /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+		8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.1;
+				minimumVersion = 6.8.0;
+			};
+		};
+		8B7DF2842D5EDCF4007D534B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8BDD3D3D2BE0CD8A0016805C /* BottomSheet */ = {
+		8B7DF2802D5EDCB6007D534B /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8BDD3D3C2BE0CD8A0016805C /* XCRemoteSwiftPackageReference "BottomSheet" */;
-			productName = BottomSheet;
+			package = 8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		8B7DF2822D5EDCBA007D534B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8B7DF2852D5EDCF4007D534B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B7DF2842D5EDCF4007D534B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

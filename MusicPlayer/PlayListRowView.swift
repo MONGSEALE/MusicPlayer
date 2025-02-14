@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//이미지 파일 크기는 반드시 736x485
+
 struct PlayListRowView: View {
     let imageName: String
     let title: String
@@ -22,7 +24,7 @@ struct PlayListRowView: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(title)
                     .fontWeight(.semibold)
-                    .foregroundColor(.white) // 텍스트는 흰색으로 명확하게 표시
+                    .foregroundColor(.white)
                 HStack{
                     Text(artist)
                     Text(formatDuration(duration))

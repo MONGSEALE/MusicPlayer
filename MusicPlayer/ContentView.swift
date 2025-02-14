@@ -31,7 +31,10 @@ struct ContentView: View {
         SongModel(audioFileName: "Y2meta.app - [MV] Kassy(케이시) _ Nothing left to say(어떤 말도 할 수가 없는 나인데) (320 kbps)", title: "어떤 말도 할 수가 없는 나인데", artist: "케이시", imageName: "케이시",duration: nil),
         SongModel(audioFileName: "Y2meta.app - [MV] Kassy(케이시) _ I'll Pray For You (CASTAWAY DIVA(무인도의 디바) OST Part.7) (320 kbps)", title: "I'll pray for you", artist: "케이시", imageName: "케이시",duration: nil),
         SongModel(audioFileName: "Y2meta.app - [MV] Kassy(케이시) _ When love comes by(이 마음이 찾아오면) (320 kbps)", title: "이 마음이 찾아오면", artist: "케이시", imageName: "케이시다른거",duration: nil),
+        SongModel(audioFileName: "[MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)]", title: "날 사랑한 처음의 너로 돌아와", artist: "케이시", imageName: "날사랑한", duration: nil),
+        SongModel(audioFileName: "[Special Clip] 케이시(Kassy)  '행복하니(Are you fine)'", title: "행복하니", artist: "케이시", imageName: "케이띠", duration: nil),
         SongModel(audioFileName: "케이시 - 오늘도 난 봄을 기다려 _ 가사 - CD MUSIC", title: "오늘도 난 봄을 기다려", artist: "케이시", imageName: "케이시또다른거",duration: nil),
+        SongModel(audioFileName: "%ED%95%9C%20%ED%8E%B8%EC%9D%98%20%EA%B7%B8%EB%A6%BC%EC%B2%98%EB%9F%BC%20[BEgKKKHQktM]", title: "한 편의 그림처럼", artist: "케이시", imageName: "케이띠2", duration: nil),
         SongModel(audioFileName: "Y2meta.app - Let it rain (비야 와라) (320 kbps)", title: "비야 와라", artist: "케이시", imageName: "케이시또또다른거",duration: nil),
         SongModel(audioFileName: "Jamie Miller - Empty Room (Official Visualizer)", title: "Empty room", artist: "제이미 밀러", imageName: "제이미밀러",duration: nil),
         SongModel(audioFileName:"Alex Sampson - Play Pretend (Acoustic)" , title: "Play Pretend (Acoustic)", artist: "알렉스 샘슨", imageName: "알렉스샘슨", duration: nil),
@@ -42,17 +45,21 @@ struct ContentView: View {
         SongModel(audioFileName: "다비치 - 두사랑 (Feat. 매드클라운) [가사-Lyrics]", title: "두사랑", artist: "다비치", imageName: "다비치", duration: nil),
         SongModel(audioFileName: "Davichi(다비치) - You Are My Everything [Eng Sub + Han + Rom] HD", title: "You are my everything", artist: "다비치", imageName: "다비치", duration: nil),
         SongModel(audioFileName: "My heart is beating (가슴이 뛴다)", title: "가슴이 뛴다", artist: "케이윌", imageName: "케이윌", duration: nil),
-        SongModel(audioFileName: "Clinton Kane - Fix It to Break It (Official Video)", title: "Fix it to break it", artist: "클린턴 케인", imageName: "ClintonKane", duration: nil),
+        SongModel(audioFileName: "Clinton Kane - Fix It to Break It (Official Video)", title: "Fix It To Break It", artist: "클린턴 케인", imageName: "ClintonKane", duration: nil),
         SongModel(audioFileName: "Avril Lavigne - Sk8er Boi (Official Lyric Video)", title: "Sk8er Boi", artist: "에이브릴 라빈", imageName: "AvrilLavigne", duration: nil),
-        SongModel(audioFileName: "Thomas Day - not my job anymore (Lyrics)" , title: "Not my job anymore", artist: "토마스 데이", imageName: "ThomasDay", duration: nil),
+        SongModel(audioFileName: "Thomas Day - not my job anymore (Lyrics)" , title: "Not My Job Anymore", artist: "토마스 데이", imageName: "ThomasDay", duration: nil),
         SongModel(audioFileName: "Wish You The Best (Guitar Version)", title: "Wish you the best(Guitar version)", artist: "루이스 카팔디", imageName: "LewisCapaldi", duration: nil),
-        SongModel(audioFileName: "Lewis Capaldi - A Cure For Minds Unwell (Lyrics)", title: "A cure for minds unwell", artist: "루이스 카팔디", imageName: "LewisCapaldi", duration: nil),
+        SongModel(audioFileName: "Lewis Capaldi - A Cure For Minds Unwell (Lyrics)", title: "A Cure For Minds Unwell", artist: "루이스 카팔디", imageName: "LewisCapaldi", duration: nil),
         SongModel(audioFileName: "리아(LIA)(ITZY) - 푸른꽃 (Blue Flower) (환혼_ 빛과 그림자 OST) Alchemy of Souls_ Light and Shadow OST Part 1", title: "푸른꽃", artist: "리아(ITZY)", imageName: "리아", duration: nil),
         SongModel(audioFileName: "Justin Bieber - Ghost (Visualizer)", title: "Ghost", artist: "저스틴 비버", imageName: "JustinBieber", duration: nil),
         SongModel(audioFileName: "STAY", title: "Stay", artist: "더 키드 라로이 & 저스틴 비버", imageName: "Stay", duration: nil),
         SongModel(audioFileName: "One Direction - Perfect (Audio)", title: "Perfect", artist: "원 디렉션", imageName: "Perfect", duration: nil),
-        SongModel(audioFileName: "[MV] 케이시 (Kassy) - 날 사랑한 처음의 너로 돌아와 [스타트업 OST Part.15 (START-UP OST Part.15)]", title: "날 사랑한 처음의 너로 돌아와", artist: "케이시", imageName: "날사랑한", duration: nil),
-        SongModel(audioFileName:"It's Always Been You - Phil Wickham (Lyrics)" , title: "It's always been you", artist: "필 윅컴", imageName: "PhilWickham", duration: nil)
+        SongModel(audioFileName:"It's Always Been You - Phil Wickham (Lyrics)" , title: "It's Always Been You", artist: "필 윅컴", imageName: "PhilWickham", duration: nil),
+        SongModel(audioFileName: "Dean Lewis, Sasha Alex Sloan - Rest (with Sasha Alex Sloan) (Official Audio)", title: "Rest", artist: "딘루이스 & 사샤슬론", imageName: "딘루이스&사샤슬론", duration: nil),
+        SongModel(audioFileName: "Avril Lavigne - Here's To Never Growing Up (Audio)", title: "Here's To Never Growing Up", artist: "에이브릴 라빈", imageName: "AvrilLavigne2", duration: nil),
+        SongModel(audioFileName: "Still%20New%20York%20%28feat.%20Joey%20Bada__%29%20[iK3xwtjFIB4]", title: "Still New York", artist: "맥스 & 조이 베이다", imageName: "Max", duration: nil),
+        SongModel(audioFileName:"볼빨간사춘기 - 사랑할 수밖에  Kpop  Lyrics  가사" , title: "사랑할 수 밖에", artist: "볼빨간사춘기", imageName: "볼빨사", duration: nil),
+        SongModel(audioFileName: "The Reklaws - I Do Too (Audio)", title: "I Do Too", artist: "레클로우즈", imageName: "Reklaws", duration: nil)
     ]
     
     @State var currentSongIndex: Int = 0
@@ -63,13 +70,9 @@ struct ContentView: View {
     @State private var currentTime: TimeInterval = 0.0
     @State private var audioDelegate: AudioPlayerDelegate?
     @State private var isRepeated: Bool = false
-    @State private var isLoading : Bool = false
+    @State private var bottomSheetHeight: CGFloat = 80
     
     var body: some View {
-        if(isLoading == true){
-            LoadingView()
-        }
-        else{
             ZStack(alignment: .bottom) {
                 VStack {
                     Text("몽실이의 음악앱")
@@ -126,7 +129,6 @@ struct ContentView: View {
                         }
                         Button {
                             if currentSongIndex < songs.count - 1 {  // currentMusicPage 수정
-                                //   stopAudio()
                                 self.currentSongIndex += 1
                             }
                         } label: {
@@ -142,43 +144,13 @@ struct ContentView: View {
                     Spacer()
                 }
                 .background(Color(red: 0.1, green: 0.1, blue: 0.1))
-                GeometryReader { geometry in
-                    VStack {
-                        Capsule()
-                            .fill(Color.gray)
-                            .frame(width: 60, height: 6)
-                            .padding(.top, 8)
-                        PlayListSheet(SongDatas: songs, currentSong: $currentSongIndex)
-                    }
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .background(Color(red: 0.2, green: 0.2, blue: 0.2))
-                    .cornerRadius(20)
-                    .offset(y: offsetY)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                let newOffset = value.translation.height + self.offsetY
-                                if newOffset >= 50 && newOffset <= geometry.size.height - 100 {
-                                    self.offsetY = newOffset
-                                }
-                            }
-                            .onEnded { value in
-                                let height = geometry.size.height
-                                if value.translation.height < 0 {
-                                    // 드래그해서 위로 올리면 펼침
-                                    self.offsetY = 50
-                                } else {
-                                    // 아래로 내리면 상단 부분만 보임
-                                    self.offsetY = height - 70
-                                }
-                            }
-                    )
-                    .animation(.easeInOut, value: offsetY)
-                }
+                
+                BottomSheetRepresentable(currentSong: $currentSongIndex, songs: songs, currentHeight: $bottomSheetHeight)
+                    .frame(height: bottomSheetHeight)  // BottomSheetViewController의 전체 높이와 동일하게
+                                 .edgesIgnoringSafeArea(.all)
             }
             .edgesIgnoringSafeArea(.all)
             .onAppear(perform: {
-                fetchDurations()
                 currentSongIndex = 0  // 초기 값도 0으로 설정
                 setupAudio()
                 let screenHeight = UIScreen.main.bounds.height
@@ -192,25 +164,6 @@ struct ContentView: View {
             .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
                 updateProgress()
             }
-        }
-    }
-    
-    
-    private func fetchDurations() {
-        // 각 노래 파일의 duration을 추출해서 업데이트
-        isLoading = true
-        for index in songs.indices {
-            if let url = Bundle.main.url(forResource: songs[index].audioFileName, withExtension: "mp3") {
-                do {
-                    let player = try AVAudioPlayer(contentsOf: url)
-                    let duration = player.duration
-                    songs[index].duration = duration  // duration 값을 할당
-                } catch {
-                    print("Error loading audio file for duration extraction.")
-                }
-            }
-        }
-        isLoading = false
     }
     
     private func setupAudio() {
@@ -266,6 +219,27 @@ struct ContentView: View {
         }
     }
 }
+
+struct BottomSheetRepresentable: UIViewControllerRepresentable {
+    @Binding var currentSong: Int
+    var songs: [SongModel]
+    @Binding var currentHeight: CGFloat   // 새로 추가한 바인딩
+    
+    func makeUIViewController(context: Context) -> BottomSheetViewController {
+        let vc = BottomSheetViewController()
+        vc.songs = songs
+        vc.currentSongIndexBinding = $currentSong
+        vc.currentHeightBinding = $currentHeight   // 바인딩 전달
+        return vc
+    }
+    
+    func updateUIViewController(_ uiViewController: BottomSheetViewController, context: Context) {
+        uiViewController.songs = songs
+        uiViewController.currentSongIndexBinding = $currentSong
+        uiViewController.currentHeightBinding = $currentHeight
+    }
+}
+
 
 
 

@@ -15,6 +15,10 @@ struct PlayListSheet: View {
             Color(red: 0.2, green: 0.2, blue: 0.2)
                 .ignoresSafeArea()
             VStack{
+                Capsule()
+                    .frame(width: 40,height: 6)
+                    .foregroundStyle(Color.gray.opacity(0.8))
+                    .padding(.top,10)
                 Text("재생목록")
                     .foregroundStyle(.white)
                     .fontWeight(.semibold)

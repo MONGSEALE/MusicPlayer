@@ -28,6 +28,7 @@ struct PlayListSheet: View {
                         ForEach(SongDatas.indices, id: \.self) { index in
                             let song = SongDatas[index]
                             PlayListRowView(imageName: song.imageName, title: song.title, artist: song.artist,duration: song.duration)
+                                .contentShape(Rectangle())
                                 .onTapGesture {
                                     currentSong = index
                                 }

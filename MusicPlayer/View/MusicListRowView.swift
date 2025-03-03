@@ -9,7 +9,7 @@ import SwiftUI
 
 //이미지 파일 크기는 반드시 736x485
 
-struct PlayListRowView: View {
+struct MusicListRowView: View {
     let imageName: String
     let title: String
     let artist: String
@@ -48,5 +48,5 @@ struct PlayListRowView: View {
 
 
 #Preview {
-    PlayListRowView(imageName:"케이시",title: "아무말도 할 수 없는 나인데",artist: "케이시", duration: 0.0)
+    MusicListRowView(imageName:"케이시",title: "아무말도 할 수 없는 나인데",artist: "케이시", duration: 0.0)
 }

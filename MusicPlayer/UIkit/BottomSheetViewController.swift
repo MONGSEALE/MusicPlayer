@@ -1,11 +1,10 @@
 //
-//  TestView.swift
+//  BottomSheetViewController2.swift
 //  MusicPlayer
 //
-//  Created by DongHyeokHwang on 2/12/25.
+//  Created by DongHyeokHwang on 3/3/25.
 //
 
-// BottomSheetViewController.swift
 import UIKit
 import SwiftUI
 import AVFAudio
@@ -14,19 +13,19 @@ class BottomSheetViewController: UIViewController {
     
     var bottomSheetView = UIView()
     var bottomSheetTopConstraint: NSLayoutConstraint!
+    var hostingController: UIHostingController<MusicPlayerView>?
     
     // 전체 높이와 처음 노출되는 높이 설정
     let bottomSheetTotalHeight: CGFloat = UIScreen.main.bounds.height * 0.9
     let bottomSheetVisibleHeight: CGFloat = 80
     
     // ContentView에서 전달받을 데이터
-    var songs: [SongModel] = []
-    var currentSongIndexBinding: Binding<Int> = .constant(0)
+    var song: SongModel? = nil
+    var currentSongIndexBinding: Binding<Int?> = .constant(0)
     var currentHeightBinding: Binding<CGFloat> = .constant(80)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDurations()
         setupBottomSheet()
     }
     
@@ -49,8 +48,10 @@ class BottomSheetViewController: UIViewController {
             bottomSheetTopConstraint
         ])
         
-        // 3. SwiftUI PlayListSheet를 UIHostingController로 감싸서 추가
-        let hostingController = UIHostingController(rootView: PlayListSheet(SongDatas: songs, currentSong: currentSongIndexBinding))
+        let songBinding = Binding<SongModel?>(get: { self.song }, set: { self.song = $0 })
+      
+        let hostingController = UIHostingController(rootView: MusicPlayerView(currentSongIndex:currentSongIndexBinding, song:songBinding))
+        self.hostingController = hostingController
         addChild(hostingController)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         bottomSheetView.addSubview(hostingController.view)
@@ -62,27 +63,12 @@ class BottomSheetViewController: UIViewController {
             hostingController.view.leadingAnchor.constraint(equalTo: bottomSheetView.leadingAnchor),
             hostingController.view.trailingAnchor.constraint(equalTo: bottomSheetView.trailingAnchor)
         ])
-        
-        // 4. UIPanGestureRecognizer 추가하여 드래그 제스처 처리
+       
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         bottomSheetView.addGestureRecognizer(panGesture)
     }
     
-    private func fetchDurations() {
-        // 각 노래 파일의 duration을 추출해서 업데이트
-      
-        for index in songs.indices {
-            if let url = Bundle.main.url(forResource: songs[index].audioFileName, withExtension: "mp3") {
-                do {
-                    let player = try AVAudioPlayer(contentsOf: url)
-                    let duration = player.duration
-                    songs[index].duration = duration  // duration 값을 할당
-                } catch {
-                    print("Error loading audio file for duration extraction.")
-                }
-            }
-        }
-    }
+
     
     @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
           let translation = gesture.translation(in: view)
@@ -122,11 +108,6 @@ class BottomSheetViewController: UIViewController {
       }
 
 }
-
-
-
-
-
 
 #Preview {
     BottomSheetViewController()

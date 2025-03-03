@@ -11,7 +11,7 @@ import SwiftUI
 struct MusicPlayerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MusicPlayerView( currentSongIndex: .constant(0),song: .constant(dummyData[0]))
         }
     }
 }

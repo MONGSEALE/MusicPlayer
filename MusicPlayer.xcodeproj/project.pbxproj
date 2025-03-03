@@ -7,16 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B217CB42CB14CC700EB1D1C /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CB32CB14CC700EB1D1C /* SongModel.swift */; };
-		8B217CB62CB14CF100EB1D1C /* ModifiedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CB52CB14CF100EB1D1C /* ModifiedButtonView.swift */; };
-		8B217CB82CB14DD700EB1D1C /* PlayListSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CB72CB14DD700EB1D1C /* PlayListSheet.swift */; };
-		8B217CBA2CB14E1500EB1D1C /* PlayListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B217CB92CB14E1500EB1D1C /* PlayListRowView.swift */; };
-		8B7DF2812D5EDCB6007D534B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7DF2802D5EDCB6007D534B /* RxSwift */; };
-		8B7DF2832D5EDCBA007D534B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7DF2822D5EDCBA007D534B /* RxCocoa */; };
-		8B7DF2862D5EDCF4007D534B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7DF2852D5EDCF4007D534B /* Alamofire */; };
-		8BBCA9012D70201000487E62 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCA9002D70201000487E62 /* DummyData.swift */; };
 		8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */; };
-		8BD9DBF82B8AEFBA0039EB71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */; };
 		8BD9DBFD2B8AEFBB0039EB71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -35,20 +26,18 @@
 
 /* Begin PBXFileReference section */
 		8B0E80E72CAFE17C00DDF8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8B217CB32CB14CC700EB1D1C /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
-		8B217CB52CB14CF100EB1D1C /* ModifiedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedButtonView.swift; sourceTree = "<group>"; };
-		8B217CB72CB14DD700EB1D1C /* PlayListSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListSheet.swift; sourceTree = "<group>"; };
-		8B217CB92CB14E1500EB1D1C /* PlayListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListRowView.swift; sourceTree = "<group>"; };
-		8BBCA9002D70201000487E62 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerApp.swift; sourceTree = "<group>"; };
-		8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8B1B9CBF2D5CB8DC0068DD85 /* UIkit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIkit; sourceTree = "<group>"; };
 		8BB62FE02D5B251E0017D57A /* Resource */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resource; sourceTree = "<group>"; };
+		8BD412C72D75781C0017A697 /* Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Data; sourceTree = "<group>"; };
+		8BD412C82D7578220017A697 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		8BD412C92D7578280017A697 /* Component */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Component; sourceTree = "<group>"; };
+		8BD412CA2D75784D0017A697 /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7DF2862D5EDCF4007D534B /* Alamofire in Frameworks */,
-				8B7DF2832D5EDCBA007D534B /* RxCocoa in Frameworks */,
-				8B7DF2812D5EDCB6007D534B /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,17 +78,15 @@
 		8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8BD412CA2D75784D0017A697 /* View */,
+				8BD412C92D7578280017A697 /* Component */,
+				8BD412C82D7578220017A697 /* Model */,
+				8BD412C72D75781C0017A697 /* Data */,
 				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
 				8BB62FE02D5B251E0017D57A /* Resource */,
 				8B0E80E72CAFE17C00DDF8B5 /* Info.plist */,
 				8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */,
-				8BD9DBF72B8AEFBA0039EB71 /* ContentView.swift */,
-				8B217CB72CB14DD700EB1D1C /* PlayListSheet.swift */,
-				8B217CB92CB14E1500EB1D1C /* PlayListRowView.swift */,
-				8B217CB32CB14CC700EB1D1C /* SongModel.swift */,
-				8B217CB52CB14CF100EB1D1C /* ModifiedButtonView.swift */,
 				8BD9DBFB2B8AEFBB0039EB71 /* Preview Content */,
-				8BBCA9002D70201000487E62 /* DummyData.swift */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -134,12 +118,13 @@
 			fileSystemSynchronizedGroups = (
 				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
 				8BB62FE02D5B251E0017D57A /* Resource */,
+				8BD412C72D75781C0017A697 /* Data */,
+				8BD412C82D7578220017A697 /* Model */,
+				8BD412C92D7578280017A697 /* Component */,
+				8BD412CA2D75784D0017A697 /* View */,
 			);
 			name = MusicPlayer;
 			packageProductDependencies = (
-				8B7DF2802D5EDCB6007D534B /* RxSwift */,
-				8B7DF2822D5EDCBA007D534B /* RxCocoa */,
-				8B7DF2852D5EDCF4007D534B /* Alamofire */,
 			);
 			productName = MusicPlayer;
 			productReference = 8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */;
@@ -170,8 +155,6 @@
 			);
 			mainGroup = 8BD9DBE92B8AEFBA0039EB71;
 			packageReferences = (
-				8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */,
-				8B7DF2842D5EDCF4007D534B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8BD9DBF32B8AEFBA0039EB71 /* Products */;
 			projectDirPath = "";
@@ -198,13 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BBCA9012D70201000487E62 /* DummyData.swift in Sources */,
-				8B217CB42CB14CC700EB1D1C /* SongModel.swift in Sources */,
-				8BD9DBF82B8AEFBA0039EB71 /* ContentView.swift in Sources */,
-				8B217CBA2CB14E1500EB1D1C /* PlayListRowView.swift in Sources */,
-				8B217CB82CB14DD700EB1D1C /* PlayListSheet.swift in Sources */,
 				8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */,
-				8B217CB62CB14CF100EB1D1C /* ModifiedButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,43 +391,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.8.0;
-			};
-		};
-		8B7DF2842D5EDCF4007D534B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.10.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		8B7DF2802D5EDCB6007D534B /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		8B7DF2822D5EDCBA007D534B /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8B7DF27E2D5EDCA5007D534B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		8B7DF2852D5EDCF4007D534B /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8B7DF2842D5EDCF4007D534B /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BD9DBEA2B8AEFBA0039EB71 /* Project object */;
 }

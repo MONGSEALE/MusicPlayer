@@ -22,7 +22,7 @@ class BottomSheetViewController: UIViewController {
     // ContentView에서 전달받을 데이터
     var song: SongModel? = nil
     var currentSongIndexBinding: Binding<Int?> = .constant(0)
-    var currentHeightBinding: Binding<CGFloat> = .constant(80)
+    var currentHeightBinding: Binding<CGFloat?> = .constant(80)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +49,10 @@ class BottomSheetViewController: UIViewController {
         ])
         
         let songBinding = Binding<SongModel?>(get: { self.song }, set: { self.song = $0 })
-      
-        let hostingController = UIHostingController(rootView: MusicPlayerView(currentSongIndex:currentSongIndexBinding, song:songBinding))
+        let hostingController = UIHostingController(rootView: MusicPlayerView(currentSongIndex:currentSongIndexBinding, song:songBinding,currentHeight: currentHeightBinding))
+        
         self.hostingController = hostingController
+        
         addChild(hostingController)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         bottomSheetView.addSubview(hostingController.view)
@@ -68,44 +69,43 @@ class BottomSheetViewController: UIViewController {
         bottomSheetView.addGestureRecognizer(panGesture)
     }
     
-
-    
     @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-          let translation = gesture.translation(in: view)
-          
-          switch gesture.state {
-          case .changed:
-              let newConstant = bottomSheetTopConstraint.constant + translation.y
-              let minConstant = -(bottomSheetTotalHeight - bottomSheetVisibleHeight)
-              let maxConstant = -bottomSheetVisibleHeight
-              if newConstant >= minConstant && newConstant <= maxConstant {
-                  bottomSheetTopConstraint.constant = newConstant
-                  gesture.setTranslation(.zero, in: view)
-                  let currentVisibleHeight = bottomSheetTotalHeight + bottomSheetTopConstraint.constant
-                  currentHeightBinding.wrappedValue = currentVisibleHeight
-              }
-              
-          case .ended:
-              let velocity = gesture.velocity(in: view).y
-              let threshold: CGFloat = 150
-              let minConstant = -(bottomSheetTotalHeight - bottomSheetVisibleHeight)
-              let maxConstant = -bottomSheetVisibleHeight
-              
-              if velocity < -threshold || bottomSheetTopConstraint.constant < (maxConstant + minConstant) / 0.5 {
-                  bottomSheetTopConstraint.constant = minConstant
-              } else {
-                  bottomSheetTopConstraint.constant = maxConstant
-              }
-              
-              UIView.animate(withDuration: 0.3) {
-                  self.view.layoutIfNeeded()
-                  self.currentHeightBinding.wrappedValue = -self.bottomSheetTopConstraint.constant
-              }
-              
-          default:
-              break
-          }
-      }
+        let translation = gesture.translation(in: view)
+        
+        switch gesture.state {
+        case .changed:
+            let newConstant = bottomSheetTopConstraint.constant + translation.y
+            let minConstant = -(bottomSheetTotalHeight - bottomSheetVisibleHeight)
+            let maxConstant = -bottomSheetVisibleHeight
+            if newConstant >= minConstant && newConstant <= maxConstant {
+                bottomSheetTopConstraint.constant = newConstant
+                gesture.setTranslation(.zero, in: view)
+                // 항상 -bottomSheetTopConstraint.constant로 계산
+                currentHeightBinding.wrappedValue = -bottomSheetTopConstraint.constant
+            }
+            
+        case .ended:
+            let velocity = gesture.velocity(in: view).y
+            let threshold: CGFloat = 150
+            let minConstant = -(bottomSheetTotalHeight - bottomSheetVisibleHeight)
+            let maxConstant = -bottomSheetVisibleHeight
+            
+            if velocity < -threshold || bottomSheetTopConstraint.constant < (maxConstant + minConstant) / 0.5 {
+                bottomSheetTopConstraint.constant = minConstant
+            } else {
+                bottomSheetTopConstraint.constant = maxConstant
+            }
+            
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+                self.currentHeightBinding.wrappedValue = -self.bottomSheetTopConstraint.constant
+            }
+            
+        default:
+            break
+        }
+    }
+
 
 }
 

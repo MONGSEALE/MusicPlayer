@@ -20,10 +20,11 @@ class AudioPlayerDelegate: NSObject, AVAudioPlayerDelegate {
     }
 }
 
-
 struct MusicPlayerView: View {
     @State var songs = dummyData
     @Binding var currentSongIndex: Int?
+    @Binding var song : SongModel?
+    @Binding var currentHeight : CGFloat?
     @State private var offsetY: CGFloat = 0
     @State private var player: AVAudioPlayer?
     @State private var isPlaying = false
@@ -31,87 +32,156 @@ struct MusicPlayerView: View {
     @State private var currentTime: TimeInterval = 0.0
     @State private var audioDelegate: AudioPlayerDelegate?
     @State private var isRepeated: Bool = false
-    @Binding var song : SongModel?
-    
+    var firstVStackOpacity: Double {
+          let height = currentHeight ?? 80
+          let normalized = (height - 80) / (700 - 80)
+          return Double(min(max(normalized, 0), 1))
+      }
+      var secondVStackOpacity: Double {
+          1 - firstVStackOpacity
+      }
     var body: some View {
-        ZStack(alignment: .bottom) {
-            VStack {
-                Image(song?.imageName ?? "")  // currentMusicPage를 0부터 시작하도록 수정
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 300)
-                    .clipShape(Circle())
-                    .padding(.all, 8)
-                    .background(Color(red: 0.23, green: 0.23, blue: 0.23))
-                    .clipShape(Circle())
-                    .padding(.top, 35)
-                    .frame(height: 200)
-                    .padding(.top,100)
-                Text(song?.title ?? "")  // currentMusicPage 수정
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.white)
-                    .frame(height: 100)
-                    .padding(.top, 10)
-                Text(song?.artist ?? "")  // currentMusicPage 수정
-                    .font(.caption)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
+        ZStack{
+          
                 VStack {
-                    HStack {
-                        Text(timeString(time: currentTime))
-                        Spacer()
-                        Text(timeString(time: totalTime))
+                    Image(song?.imageName ?? "")  // currentMusicPage를 0부터 시작하도록 수정
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300)
+                        .clipShape(Circle())
+                        .padding(.all, 8)
+                        .background(Color(red: 0.23, green: 0.23, blue: 0.23))
+                        .clipShape(Circle())
+                        .padding(.top, 35)
+                        .frame(height: 200)
+                        .padding(.top,100)
+                    Text(song?.title ?? "")  // currentMusicPage 수정
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                        .frame(height: 100)
+                        .padding(.top, 10)
+                    Text(song?.artist ?? "")  // currentMusicPage 수정
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.white)
+                    VStack {
+                        HStack {
+                            Text(timeString(time: currentTime))
+                            Spacer()
+                            Text(timeString(time: totalTime))
+                        }
+                        .font(.caption)
+                        .foregroundStyle(.white)
+                        .padding([.top, .trailing, .leading], 20)
+                        CustomSlider(
+                            value: Binding(
+                                get: { currentTime },
+                                set: { newValue in
+                                    currentTime = newValue
+                                    audioTime(to: newValue)
+                                }
+                            ),
+                            range: 0...totalTime
+                        )
+                        .padding([.top, .trailing, .leading], 20)
                     }
-                    
-                    .font(.caption)
-                    .foregroundStyle(.white)
-                    .padding([.top, .trailing, .leading], 20)
-    
-                    CustomSlider(
-                        value: Binding(
-                            get: { currentTime },
-                            set: { newValue in
-                                currentTime = newValue
-                                audioTime(to: newValue)
+                    HStack(spacing: 20) {
+                        Button {
+                            if currentSongIndex ?? 0 > 0 {  // currentMusicPage를 0에서 시작하므로 0보다 클 때만 감소
+                                self.currentSongIndex! -= 1
                             }
-                        ),
-                        range: 0...totalTime
-                    )
-                    .padding([.top, .trailing, .leading], 20)
-                }
-                HStack(spacing: 20) {
-                    Button {
-                        if currentSongIndex ?? 0 > 0 {  // currentMusicPage를 0에서 시작하므로 0보다 클 때만 감소
-                            self.currentSongIndex! -= 1
+                        } label: {
+                            ModifiedButtonView(image: "backward.fill")
                         }
-                    } label: {
-                        ModifiedButtonView(image: "backward.fill")
-                    }
-                    Button {
-                        isPlaying ? stopAudio() : playAudio()
-                    } label: {
-                        ModifiedButtonView(image: isPlaying ? "pause.fill" : "play.fill")
-                    }
-                    Button {
-                        if currentSongIndex ?? 0 < songs.count - 1 {  // currentMusicPage 수정
-                            self.currentSongIndex! += 1
+                        Button {
+                            isPlaying ? stopAudio() : playAudio()
+                        } label: {
+                            ModifiedButtonView(image: isPlaying ? "pause.fill" : "play.fill")
                         }
-                    } label: {
-                        ModifiedButtonView(image: "forward.fill")
+                        Button {
+                            if currentSongIndex ?? 0 < songs.count - 1 {  // currentMusicPage 수정
+                                self.currentSongIndex! += 1
+                            }
+                        } label: {
+                            ModifiedButtonView(image: "forward.fill")
+                        }
+                        Button {
+                            isRepeated.toggle()
+                        } label: {
+                            ModifiedButtonView(image: isRepeated ? "repeat.1" : "repeat")
+                        }
                     }
-                    Button {
-                        isRepeated.toggle()
-                    } label: {
-                        ModifiedButtonView(image: isRepeated ? "repeat.1" : "repeat")
-                    }
+                    .padding(.top, 25)
+                    Spacer()
                 }
-                .padding(.top, 25)
-                Spacer()
-            }
-            .background(Color(red: 0.1, green: 0.1, blue: 0.1))
-            
+                .opacity(firstVStackOpacity)
+           
+                VStack{
+                    HStack{
+                        
+                        Image(song?.imageName ?? "")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100)
+                            .clipShape(Circle())
+                            .padding(.all, 4)
+                            .background(Color(red: 0.23, green: 0.23, blue: 0.23))
+                            .clipShape(Circle())
+                            .padding(.top)
+                        
+                        VStack(spacing:10){
+                                HStack{
+                                    Text(song?.title ?? "")
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(.white)
+                                    Spacer()
+                                }
+                                HStack{
+                                    Text(song?.artist ?? "")
+                                        .font(.caption)
+                                        .fontWeight(.semibold)
+                                        .foregroundStyle(.white)
+                                    Spacer()
+                                }
+                            }
+                        .padding(.top)
+              
+                            HStack{
+                                Button {
+                                    if currentSongIndex ?? 0 > 0 {  // currentMusicPage를 0에서 시작하므로 0보다 클 때만 감소
+                                        self.currentSongIndex! -= 1
+                                    }
+                                } label: {
+                                    Image(systemName: "backward.fill")
+                                        .foregroundStyle(.white)
+                                }
+                                Button {
+                                    isPlaying ? stopAudio() : playAudio()
+                                } label: {
+                                    Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                                        .foregroundStyle(.white)
+                                }
+                                Button {
+                                    if currentSongIndex ?? 0 < songs.count - 1 {  // currentMusicPage 수정
+                                        self.currentSongIndex! += 1
+                                    }
+                                } label: {
+                                    Image(systemName: "forward.fill")
+                                        .foregroundStyle(.white)
+                                }
+                            }
+                            .padding()
+          
+                    }
+                    HStack{
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .opacity(secondVStackOpacity)
         }
+        .background(Color(red: 0.1, green: 0.1, blue: 0.1))
         .edgesIgnoringSafeArea(.all)
         .onAppear(perform: {
             currentSongIndex = 0  // 초기 값도 0으로 설정
@@ -128,8 +198,8 @@ struct MusicPlayerView: View {
         .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
             updateProgress()
         }
-        .onChange(of:song){
-            print(song ?? "")
+        .onChange(of:currentHeight){
+            print(currentHeight ?? "")
         }
     }
     
@@ -189,6 +259,6 @@ struct MusicPlayerView: View {
 
 
 #Preview {
-    MusicPlayerView(currentSongIndex: .constant(0), song:.constant(dummyData[0]))
+    MusicPlayerView(currentSongIndex: .constant(0), song:.constant(dummyData[0]),currentHeight: .constant(80))
 }
 

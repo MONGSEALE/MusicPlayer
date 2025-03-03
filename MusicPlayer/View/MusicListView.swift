@@ -11,7 +11,7 @@ import AVFAudio
 struct MusicListView: View {
     let SongDatas : [SongModel] = dummyData
     @State var currentSong : Int? = 0
-    @State private var bottomSheetHeight: CGFloat = 80
+    @State private var bottomSheetHeight: CGFloat? = 80
     @State private var selectedSong : SongModel = dummyData[0]
    
     var body: some View {
@@ -34,7 +34,7 @@ struct MusicListView: View {
                 }
                 .padding(.bottom,80)
             BottomSheet(currentSong: $currentSong, song: $selectedSong, currentHeight: $bottomSheetHeight)
-                .frame(height: bottomSheetHeight)  // BottomSheetViewController의 전체 높이와 동일하게
+                .frame(height: bottomSheetHeight)  
                 .edgesIgnoringSafeArea(.all)
         }
         .onChange(of:currentSong){
@@ -52,7 +52,7 @@ struct MusicListView: View {
 struct BottomSheet: UIViewControllerRepresentable {
     @Binding var currentSong: Int?
     @Binding var song: SongModel
-    @Binding var currentHeight: CGFloat   // 새로 추가한 바인딩
+    @Binding var currentHeight: CGFloat?   // 새로 추가한 바인딩
     
     func makeUIViewController(context: Context) -> BottomSheetViewController {
         let vc = BottomSheetViewController()
@@ -71,7 +71,7 @@ struct BottomSheet: UIViewControllerRepresentable {
             hostingController.rootView = MusicPlayerView(currentSongIndex: uiViewController.currentSongIndexBinding ,song: Binding<SongModel?>(
                    get: { uiViewController.song },
                    set: { uiViewController.song = $0 }
-               ))
+            ),currentHeight: uiViewController.currentHeightBinding)
            }
     }
 }

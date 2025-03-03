@@ -22,20 +22,7 @@ struct ModifiedButtonView: View {
                             .fill(.white.opacity(0.9))
                     }
                 )
-//                .background(
-//                    ZStack{
-//                        Color(#colorLiteral(red:0.7608050108,green: 0.8164883852, blue: 0.9259157777,alpha:1))
-//                        Circle()
-//                            .foregroundStyle(.white)
-//                            .blur(radius: 4)
-//                            .offset(x: -8,y: -8)
-//                        Circle()
-//                            .fill(LinearGradient(gradient: Gradient(colors: [Color.white,Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing))
-//                            .padding(2)
-//                            .blur(radius: 2)
-//                    }
-//                        .clipShape(Circle())
-//                )
+
         
     }
 }

@@ -1,0 +1,55 @@
+//
+//  Video.swift
+//  MusicPlayer
+//
+//  Created by DongHyeokHwang on 3/4/25.
+//
+
+import Foundation
+
+
+struct Video: Identifiable, Decodable {
+    let id: String
+    let title: String
+    let thumbnail: URL
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case snippet
+    }
+    
+    enum IDKeys: String, CodingKey {
+        case videoId
+    }
+    
+    enum SnippetKeys: String, CodingKey {
+        case title, thumbnails
+    }
+    
+    enum ThumbnailsKeys: String, CodingKey {
+        case medium
+    }
+    
+    enum MediumKeys: String, CodingKey {
+        case url
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // id 객체 내의 videoId
+        let idContainer = try container.nestedContainer(keyedBy: IDKeys.self, forKey: .id)
+        id = try idContainer.decode(String.self, forKey: .videoId)
+        
+        // snippet 내의 제목과 썸네일 정보
+        let snippetContainer = try container.nestedContainer(keyedBy: SnippetKeys.self, forKey: .snippet)
+        title = try snippetContainer.decode(String.self, forKey: .title)
+        
+        let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: ThumbnailsKeys.self, forKey: .thumbnails)
+        let mediumContainer = try thumbnailsContainer.nestedContainer(keyedBy: MediumKeys.self, forKey: .medium)
+        let thumbnailString = try mediumContainer.decode(String.self, forKey: .url)
+        thumbnail = URL(string: thumbnailString) ?? URL(string: "https://")!
+    }
+}
+
+

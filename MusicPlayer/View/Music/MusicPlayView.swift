@@ -9,8 +9,8 @@ import SwiftUI
 import AVKit
 
 class AudioPlayerDelegate: NSObject, AVAudioPlayerDelegate {
-    var parent: MusicPlayerView
-    init(parent: MusicPlayerView) {
+    var parent: MusicPlayView
+    init(parent: MusicPlayView) {
         self.parent = parent
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -20,30 +20,35 @@ class AudioPlayerDelegate: NSObject, AVAudioPlayerDelegate {
     }
 }
 
-struct MusicPlayerView: View {
+struct MusicPlayView: View {
     @State var songs = dummyData
     @Binding var currentSongIndex: Int?
     @Binding var song : SongModel?
     @Binding var currentHeight : CGFloat?
-    @State private var offsetY: CGFloat = 0
     @State private var player: AVAudioPlayer?
     @State private var isPlaying = false
     @State private var totalTime: TimeInterval = 0.0
     @State private var currentTime: TimeInterval = 0.0
     @State private var audioDelegate: AudioPlayerDelegate?
     @State private var isRepeated: Bool = false
+    private let sheetTotalHeight = UIScreen.main.bounds.height * 0.8
+    private let sheetVisibleHeight: CGFloat = 90
+    private var maxSheetHeight: CGFloat {
+        sheetTotalHeight - sheetVisibleHeight
+    }
     var firstVStackOpacity: Double {
-          let height = currentHeight ?? 80
-          let normalized = (height - 80) / (700 - 80)
-          return Double(min(max(normalized, 0), 1))
-      }
-      var secondVStackOpacity: Double {
-          1 - firstVStackOpacity
-      }
+        let height = currentHeight ?? sheetVisibleHeight
+        // 최소값에서 최대값까지 선형 보간 (0 ~ 1)
+        let normalized = (height - sheetVisibleHeight) / (maxSheetHeight - sheetVisibleHeight)
+        return Double(min(max(normalized, 0), 1))
+    }
+    var secondVStackOpacity: Double {
+        1 - firstVStackOpacity
+    }
     var body: some View {
         ZStack{
-          
                 VStack {
+                    Spacer()
                     Image(song?.imageName ?? "")  // currentMusicPage를 0부터 시작하도록 수정
                         .resizable()
                         .scaledToFit()
@@ -54,7 +59,6 @@ struct MusicPlayerView: View {
                         .clipShape(Circle())
                         .padding(.top, 35)
                         .frame(height: 200)
-                        .padding(.top,100)
                     Text(song?.title ?? "")  // currentMusicPage 수정
                         .font(.title)
                         .fontWeight(.bold)
@@ -92,38 +96,38 @@ struct MusicPlayerView: View {
                                 self.currentSongIndex! -= 1
                             }
                         } label: {
-                            ModifiedButtonView(image: "backward.fill")
+                            MusicButtonView(image: "backward.fill")
                         }
                         Button {
                             isPlaying ? stopAudio() : playAudio()
                         } label: {
-                            ModifiedButtonView(image: isPlaying ? "pause.fill" : "play.fill")
+                            MusicButtonView(image: isPlaying ? "pause.fill" : "play.fill")
                         }
                         Button {
                             if currentSongIndex ?? 0 < songs.count - 1 {  // currentMusicPage 수정
                                 self.currentSongIndex! += 1
                             }
                         } label: {
-                            ModifiedButtonView(image: "forward.fill")
+                            MusicButtonView(image: "forward.fill")
                         }
                         Button {
                             isRepeated.toggle()
                         } label: {
-                            ModifiedButtonView(image: isRepeated ? "repeat.1" : "repeat")
+                            MusicButtonView(image: isRepeated ? "repeat.1" : "repeat")
                         }
                     }
                     .padding(.top, 25)
+                    .padding(.bottom,100)
                     Spacer()
                 }
                 .opacity(firstVStackOpacity)
-           
                 VStack{
                     HStack{
                         
                         Image(song?.imageName ?? "")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 100)
+                            .frame(width: 80)
                             .clipShape(Circle())
                             .padding(.all, 4)
                             .background(Color(red: 0.23, green: 0.23, blue: 0.23))
@@ -135,6 +139,8 @@ struct MusicPlayerView: View {
                                     Text(song?.title ?? "")
                                         .fontWeight(.bold)
                                         .foregroundStyle(.white)
+                                        .lineLimit(1)              
+                                        .truncationMode(.tail)
                                     Spacer()
                                 }
                                 HStack{
@@ -171,6 +177,7 @@ struct MusicPlayerView: View {
                                         .foregroundStyle(.white)
                                 }
                             }
+                            .padding(.top)
                             .padding()
           
                     }
@@ -181,14 +188,10 @@ struct MusicPlayerView: View {
                 }
                 .opacity(secondVStackOpacity)
         }
-        .background(Color(red: 0.1, green: 0.1, blue: 0.1))
+        .background(GrayGradient())
         .edgesIgnoringSafeArea(.all)
         .onAppear(perform: {
-            currentSongIndex = 0  // 초기 값도 0으로 설정
             setupAudio()
-            let screenHeight = UIScreen.main.bounds.height
-            self.offsetY = screenHeight - 70
-            print(song ?? "")
         })
         .onChange(of: currentSongIndex) {
             stopAudio()
@@ -198,8 +201,8 @@ struct MusicPlayerView: View {
         .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
             updateProgress()
         }
-        .onChange(of:currentHeight){
-            print(currentHeight ?? "")
+        .onDisappear{
+            stopAudio()
         }
     }
     
@@ -259,6 +262,6 @@ struct MusicPlayerView: View {
 
 
 #Preview {
-    MusicPlayerView(currentSongIndex: .constant(0), song:.constant(dummyData[0]),currentHeight: .constant(80))
+    MusicPlayView(currentSongIndex: .constant(0), song:.constant(dummyData[0]),currentHeight: .constant(80))
 }
 

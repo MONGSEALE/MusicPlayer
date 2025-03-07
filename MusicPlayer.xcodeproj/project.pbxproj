@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B2468C32D7690C900417ADE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2468C22D7690C900417ADE /* RealmSwift */; };
+		8B2469982D76A27200417ADE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8B2468C22D7690C900417ADE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */; };
 		8BD9DBFD2B8AEFBB0039EB71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -18,6 +20,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8B2469982D76A27200417ADE /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,6 +36,8 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8B1B9CBF2D5CB8DC0068DD85 /* UIkit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIkit; sourceTree = "<group>"; };
+		8B24694F2D769A7000417ADE /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		8B5D443F2D76DDEC0013BBA3 /* Style */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Style; sourceTree = "<group>"; };
 		8BB62FE02D5B251E0017D57A /* Resource */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resource; sourceTree = "<group>"; };
 		8BD412C72D75781C0017A697 /* Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Data; sourceTree = "<group>"; };
 		8BD412C82D7578220017A697 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2468C32D7690C900417ADE /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,8 @@
 		8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8B5D443F2D76DDEC0013BBA3 /* Style */,
+				8B24694F2D769A7000417ADE /* ViewModel */,
 				8BD412CA2D75784D0017A697 /* View */,
 				8BD412C92D7578280017A697 /* Component */,
 				8BD412C82D7578220017A697 /* Model */,
@@ -117,6 +125,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
+				8B24694F2D769A7000417ADE /* ViewModel */,
+				8B5D443F2D76DDEC0013BBA3 /* Style */,
 				8BB62FE02D5B251E0017D57A /* Resource */,
 				8BD412C72D75781C0017A697 /* Data */,
 				8BD412C82D7578220017A697 /* Model */,
@@ -125,6 +135,7 @@
 			);
 			name = MusicPlayer;
 			packageProductDependencies = (
+				8B2468C22D7690C900417ADE /* RealmSwift */,
 			);
 			productName = MusicPlayer;
 			productReference = 8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */;
@@ -155,6 +166,7 @@
 			);
 			mainGroup = 8BD9DBE92B8AEFBA0039EB71;
 			packageReferences = (
+				8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 8BD9DBF32B8AEFBA0039EB71 /* Products */;
 			projectDirPath = "";
@@ -391,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B2468C22D7690C900417ADE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BD9DBEA2B8AEFBA0039EB71 /* Project object */;
 }

@@ -13,16 +13,16 @@ class BottomSheetViewController: UIViewController {
     
     var bottomSheetView = UIView()
     var bottomSheetTopConstraint: NSLayoutConstraint!
-    var hostingController: UIHostingController<MusicPlayerView>?
+    var hostingController: UIHostingController<MusicPlayView>?
     
     // 전체 높이와 처음 노출되는 높이 설정
-    let bottomSheetTotalHeight: CGFloat = UIScreen.main.bounds.height * 0.9
-    let bottomSheetVisibleHeight: CGFloat = 80
+    let bottomSheetTotalHeight: CGFloat = UIScreen.main.bounds.height * 0.8
+    let bottomSheetVisibleHeight: CGFloat = 90
     
     // ContentView에서 전달받을 데이터
     var song: SongModel? = nil
     var currentSongIndexBinding: Binding<Int?> = .constant(0)
-    var currentHeightBinding: Binding<CGFloat?> = .constant(80)
+    var currentHeightBinding: Binding<CGFloat?> = .constant(90)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class BottomSheetViewController: UIViewController {
         ])
         
         let songBinding = Binding<SongModel?>(get: { self.song }, set: { self.song = $0 })
-        let hostingController = UIHostingController(rootView: MusicPlayerView(currentSongIndex:currentSongIndexBinding, song:songBinding,currentHeight: currentHeightBinding))
+        let hostingController = UIHostingController(rootView: MusicPlayView(currentSongIndex:currentSongIndexBinding, song:songBinding,currentHeight: currentHeightBinding))
         
         self.hostingController = hostingController
         

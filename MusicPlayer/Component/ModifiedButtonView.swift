@@ -2,31 +2,27 @@
 //  ModifiedButtonView.swift
 //  MusicPlayer
 //
-//  Created by DongHyeokHwang on 10/5/24.
+//  Created by DongHyeokHwang on 3/7/25.
 //
 
 import SwiftUI
 
 struct ModifiedButtonView: View {
-    var image : String
+    let text : String
     var body: some View {
-      
-            
-            Image(systemName: image)
-                .font(.system(size: 14,weight: .bold))
-                .padding(.all,25)
-                .foregroundStyle(.black.opacity(0.8))
-                .background(
-                    ZStack{
-                        Circle()
-                            .fill(.white.opacity(0.9))
-                    }
-                )
-
-        
+        HStack{
+            Spacer()
+            Text(text)
+            Spacer()
+        }
+        .padding(.vertical)
+            .background(.blue)
+            .foregroundStyle(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .padding()
     }
 }
 
 #Preview {
-    ModifiedButtonView(image: "")
+    ModifiedButtonView(text: "저장하기")
 }

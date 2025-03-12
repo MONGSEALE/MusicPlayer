@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ModifiedButtonView: View {
     let text : String
+    var isEnabled : Bool
     var body: some View {
         HStack{
             Spacer()
@@ -16,7 +17,7 @@ struct ModifiedButtonView: View {
             Spacer()
         }
         .padding(.vertical)
-            .background(.blue)
+        .background(isEnabled ? .blue : .gray)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding()
@@ -24,5 +25,5 @@ struct ModifiedButtonView: View {
 }
 
 #Preview {
-    ModifiedButtonView(text: "저장하기")
+    ModifiedButtonView(text: "저장하기",isEnabled: false)
 }

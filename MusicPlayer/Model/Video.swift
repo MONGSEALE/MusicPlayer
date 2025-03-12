@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Video: Identifiable, Decodable {
+struct Video: Identifiable, Decodable,Equatable {
     let id: String
     let title: String
     let thumbnail: URL

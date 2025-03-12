@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct MainView: View {
-    init() {
+    @ObservedObject var youtubePlayViewModel : YoutubePlayViewModel
+    @ObservedResults(VideoObject.self) var videos
+    var convertedIDs: [String] {
+        videos.map { Video(from: $0).id }
+    }
+
+    init(youtubePlayViewModel : YoutubePlayViewModel) {
         // UITabBarAppearance를 이용한 커스텀
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -28,6 +35,7 @@ struct MainView: View {
         if #available(iOS 15.0, *) {
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
+        self.youtubePlayViewModel = youtubePlayViewModel
     }
     var body: some View {
         TabView {
@@ -37,12 +45,19 @@ struct MainView: View {
                     Text("음악")
                 }
             
-            VideoListView()
+            VideoListView(youtubePlayViewModel: youtubePlayViewModel)
                 .tabItem {
                     Image(systemName: "video")
                     Text("영상")
                 }
         }
+//        .onAppear{
+//            Task{
+//                print("extractVideos 함수 실행")
+//              await youtubePlayViewModel.extractVideos(videoIDs: convertedIDs)
+//                print("extractVideos 함수 완료됨")
+//            }
+//        }
     }
 }
 
@@ -51,5 +66,5 @@ struct MainView: View {
 
 
 #Preview {
-    MainView()
+    MainView(youtubePlayViewModel: YoutubePlayViewModel())
 }

@@ -83,6 +83,7 @@ public struct MarqueeText: View {
                 }
             }
             .onAppear {
+            
                 // Trigger scrolling if needed
                 self.animate = needsScrolling
             }
@@ -90,6 +91,7 @@ public struct MarqueeText: View {
                 let newStringWidth = text.widthOfString(usingFont: font)
                 if newStringWidth > geo.size.width {
                     // Stop the old animation first
+
                     self.animate = false
                     
                     // Kick off a new animation on the next runloop

@@ -57,7 +57,7 @@ struct MusicListView: View {
                 .padding(.bottom,80)
                 .blur(radius: computedBlur)
                 .allowsHitTesting(bottomSheetHeight ?? 90 == 90 )
-                BottomSheet(currentSong: $currentSong, song: $selectedSong, currentHeight: $bottomSheetHeight)
+                BottomMusicSheet(currentSong: $currentSong, song: $selectedSong, currentHeight: $bottomSheetHeight)
                     .frame(height: bottomSheetHeight)
                     .edgesIgnoringSafeArea(.all)
             }
@@ -75,7 +75,7 @@ struct MusicListView: View {
     MusicListView( )
 }
 
-struct BottomSheet: UIViewControllerRepresentable {
+struct BottomMusicSheet: UIViewControllerRepresentable {
     @Binding var currentSong: Int?
     @Binding var song: SongModel
     @Binding var currentHeight: CGFloat?   // 새로 추가한 바인딩

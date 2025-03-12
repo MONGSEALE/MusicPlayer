@@ -8,99 +8,190 @@
 import SwiftUI
 import WebKit
 import RealmSwift
+import YouTubeKit
+import AVKit
 
-class VideoObject: Object, ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var id: String
-    @Persisted var title: String = ""
-    // URL은 직접 저장할 수 없으므로 String 형태로 저장
-    @Persisted var thumbnailURL: String = ""
-    
-    convenience init(video: Video) {
-        self.init()
-        self.id = video.id
-        self.title = video.title
-        self.thumbnailURL = video.thumbnail.absoluteString
-    }
-}
 
-struct YouTubePlayerView: UIViewRepresentable {
-    let videoID: String
-
-    func makeUIView(context: Context) -> WKWebView {
-        let configuration = WKWebViewConfiguration()
-        configuration.allowsInlineMediaPlayback = true  // 인라인 재생 허용
-        let webView = WKWebView(frame: .zero, configuration: configuration)
-        webView.scrollView.isScrollEnabled = false
-        return webView
-    }
-    
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        // videoID를 이용해 embed URL 생성 (playsinline=1: 앱 내 재생)
-        let urlString = "https://www.youtube.com/embed/\(videoID)?playsinline=1&autoplay=1"
-        guard let url = URL(string: urlString) else { return }
-        uiView.load(URLRequest(url: url))
-    }
-}
 
 struct VideoPlayView: View {
-    let video : Video
-    let isAddable : Bool
-    @State private var showSuccessToastMessage : Bool = false
-    @State private var showErrorToastMessage : Bool = false
+    
+    @Binding var video: Video?
+    @Binding var startingOffset: CGFloat
+    @Binding var currentOffset: CGFloat
+    @Binding var endOffset: CGFloat
+    @ObservedObject var youtubePlayViewModel : YoutubePlayViewModel
+    @Binding var index : Int
+    @Binding var maxIndex : Int
+    
     var body: some View {
-        ZStack{
-            VStack {
+        // 전체 오프셋을 계산하여 progress(0: 최소상태, 1: 완전히 열린 상태)로 변환
+        let totalOffset = startingOffset + currentOffset + endOffset
+        let progress = 1 - (totalOffset / startingOffset)
+        
+        ZStack {
+            // 최소 상태일 때 보여줄 작은 버전
+                HStack(alignment: .top, spacing: 8) {
+                    ZStack{
+                        if let player = youtubePlayViewModel.player {
+                            VideoPlayer(player: player)
+                                .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { notification in
+                                    if (index < maxIndex){
+                                        youtubePlayViewModel.player = nil
+                                        index = index + 1
+                                    }
+                                }
+                        }
+                    }
+                    .frame(width: 100, height: 56)
+                    VStack(spacing:8){
+                        HStack{
+                            Text(video?.title ?? "")
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.white)
+                                .font(.title3)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            Spacer()
+                        }
+                        HStack(spacing:16){
+                            Spacer()
+                            Button{
+                                if (index > 0){
+                                    youtubePlayViewModel.player = nil
+                                    index = index - 1
+                                }
+                            }label: {
+                                Image(systemName: "backward.fill")
+                                    .foregroundColor(.white)
+                            }
+                            Group {
+                                if let player = youtubePlayViewModel.player, player.rate > 0 {
+                                    Button(action: {
+                                        player.pause()
+                                    }) {
+                                        Image(systemName: "stop.fill")
+                                            .foregroundColor(.white)
+                                    }
+                                } else {
+                                    Button(action: {
+                                        youtubePlayViewModel.player?.play()
+                                    }) {
+                                        Image(systemName: "play.fill")
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                            }
+                            Button{
+                                if (index < maxIndex){
+                                    youtubePlayViewModel.player = nil
+                                    index = index + 1
+                                }
+                            }label: {
+                                Image(systemName: "forward.fill")
+                                    .foregroundColor(.white)
+                            }
+                            Spacer()
+                        }
+                    
+                    }
+                    .frame(height: 56)
+                }
+                .padding()
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .opacity(1 - progress)
+            
+            // 완전히 열린 상태일 때 보여줄 중앙의 큰 버전
+            VStack(spacing: 16) {
                 Spacer()
-                YouTubePlayerView(videoID: video.id)
-                    .frame(height: 250)
+                if let player = youtubePlayViewModel.player {
+                    VideoPlayer(player: player)
+                        .frame(height: 300)
+                        .onAppear {
+                                player.play()
+                        }
+                } else {
+                    Text("로딩중")
+                        .foregroundColor(.white)
+                }
                 MarqueeText(
-                    text: video.title,
+                    text: video?.title ?? "기본 텍스트",
                     font: UIFont.preferredFont(forTextStyle: .title2),
-                   leftFade: 16,
-                   rightFade: 16,
-                   startDelay: 3,
+                    leftFade: 16,
+                    rightFade: 16,
+                    startDelay: 1,
                     fontWeight: .semibold,
                     foregroundStyle: .white
-                   )
+                )
+                .id(endOffset == -startingOffset ? "fullyOpen" : "notFullyOpen")
                 .padding()
-                if(isAddable==true){
-                    Button{
-                        saveVideo()
-                    }label: {
-                        ModifiedButtonView(text: "저장하기")
+                Spacer()
+                    HStack{
+                        Button{
+                            if (index > 0){
+                                youtubePlayViewModel.player = nil
+                                index = index - 1
+                            }
+                        }label: {
+                            Image(systemName: "backward.fill")
+                                .foregroundColor(.white)
+                        }
+                        Group {
+                            if let player = youtubePlayViewModel.player, player.rate > 0 {
+                                // 재생 중 → 정지 버튼 표시
+                                Button(action: {
+                                    player.pause()
+                                }) {
+                                    Image(systemName: "stop.fill")
+                                        .foregroundColor(.white)
+                                        .padding(.leading, 8)
+                                }
+                            } else {
+                                // 정지 상태 → 재생 버튼 표시
+                                Button(action: {
+                                    youtubePlayViewModel.player?.play()
+                                }) {
+                                    Image(systemName: "play.fill")
+                                        .foregroundColor(.white)
+                                        .padding(.leading, 8)
+                                }
+                            }
+                        }
+                        Button{
+                            if (index < maxIndex){
+                                youtubePlayViewModel.player = nil
+                                index = index + 1
+                            }
+                        }label: {
+                            Image(systemName: "forward.fill")
+                                .foregroundColor(.white)
+                        }
                     }
-                }
+                
                 Spacer()
             }
-            if (showSuccessToastMessage){
-                ToastMessage(type: .saved, title: "성공", message: "저장하였습니다", onCancelTapped: {showSuccessToastMessage = false})
-            }
-            else   if (showErrorToastMessage){
-                ToastMessage(type: .error, title: "실패", message: "에러가 발생하였습니다", onCancelTapped: {showErrorToastMessage = false})
-            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .opacity(progress)
         }
-        .background(GrayGradient())
+//        .onChange(of: video) {
+//            youtubePlayViewModel.player = nil
+//            Task{
+//                guard let video = video else { return }
+//                youtubePlayViewModel.playVideo(videoID: video.id)
+//            }
+//        }
     }
-    func saveVideo() {
-           do {
-               let realm = try Realm()
-               let videoObject = VideoObject(video: video)
-               try realm.write {
-                   realm.add(videoObject, update: .modified)
-               }
-               showSuccessToastMessage = true
-               DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                          showSuccessToastMessage = false
-                      }
-           } catch {
-               showErrorToastMessage = true
-               DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                          showErrorToastMessage = false
-                      }
-           }
-       }
 }
 
+
 //#Preview {
-//    VideoPlayView()
+//    VideoPlayView(
+//        video: .constant(
+//            Video(
+//                id: "dummyID",
+//                title: "테스트 비디오",
+//                thumbnail: URL(string: "https://example.com/thumbnail.jpg")!
+//            )
+//        ),
+//        isAddable: false
+//    )
 //}

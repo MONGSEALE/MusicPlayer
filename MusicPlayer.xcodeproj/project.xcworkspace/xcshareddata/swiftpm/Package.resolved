@@ -1,5 +1,5 @@
 {
-  "originHash" : "a75b0e5287252b309baab7ac389d0b24c4da85dd7fba4e53c3f28752e2abe8ce",
+  "originHash" : "734cc572604c69d1b67a8b82269ef119655582104b18956a563e28e9138e0932",
   "pins" : [
     {
       "identity" : "realm-cocoa",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "85eeca41654cc9070ad81a21a4b1d153ad467c33",
         "version" : "14.13.1"
+      }
+    },
+    {
+      "identity" : "youtubekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alexeichhorn/YouTubeKit",
+      "state" : {
+        "revision" : "e7dbaa332ff190e85241bb90e9a26f3ce4993458",
+        "version" : "0.2.6"
       }
     }
   ],

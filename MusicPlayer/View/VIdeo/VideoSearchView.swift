@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct VideoSearchView: View {
-    @StateObject var viewModel = YouTubeSearchViewModel()
+    @StateObject var youtubeSearchViewModel = YouTubeSearchViewModel()
+    @StateObject var youtubePlayViewModel = YoutubePlayViewModel()
     @State private var searchText = ""
     @State private var selectedVideo : Video? = nil
+    @State private var isSheetOn : Bool = false
     init() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -29,12 +31,12 @@ struct VideoSearchView: View {
                 Color(red: 0.2, green: 0.2, blue: 0.2)
                     .ignoresSafeArea()
                 VStack {
-                    if viewModel.isLoading {
+                    if youtubeSearchViewModel.isLoading {
                         Spacer()
                         ProgressView("검색중...")
                         Spacer()
                     }
-                    List(viewModel.videos) { video in
+                    List(youtubeSearchViewModel.videos) { video in
                         HStack(spacing: 10) {
                             // AsyncImage는 iOS 15 이상에서 지원 (썸네일 이미지 표시)
                             AsyncImage(url: video.thumbnail) { image in
@@ -58,10 +60,7 @@ struct VideoSearchView: View {
                         .contentShape(Rectangle())
                         .onTapGesture {
                             selectedVideo = video
-                        }
-                        .sheet(item: $selectedVideo) { video in
-                            VideoPlayView(video: video,isAddable: true)
-                                .presentationDetents([.fraction(0.6)])
+                            isSheetOn = true
                         }
                     }
                     .scrollContentBackground(.hidden)
@@ -69,14 +68,22 @@ struct VideoSearchView: View {
             }
             .navigationTitle("유튜브 검색")
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "검색어 입력")
-
             .onSubmit(of: .search) {
-                viewModel.fetchVideos(query: searchText)
+                youtubeSearchViewModel.fetchVideos(query: searchText)
+            }
+            .sheet(isPresented: $isSheetOn){
+                VideoPreviewView(video: $selectedVideo,youtubePlayViewModel: youtubePlayViewModel)
+                    .presentationDetents([.fraction(0.7)])
+            }
+            .onChange(of:isSheetOn){
+                if(isSheetOn==false){
+                    youtubePlayViewModel.player = nil
+                }
             }
         }
     }
 }
 
-#Preview {
-    VideoSearchView()
-}
+//#Preview {
+//    VideoSearchView()
+//}

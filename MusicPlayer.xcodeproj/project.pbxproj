@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B19A30E2D7C0DEB00CD6DB7 /* YouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B19A30D2D7C0DEB00CD6DB7 /* YouTubeKit */; };
 		8B2468C32D7690C900417ADE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2468C22D7690C900417ADE /* RealmSwift */; };
 		8B2469982D76A27200417ADE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8B2468C22D7690C900417ADE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */; };
@@ -38,6 +39,7 @@
 		8B1B9CBF2D5CB8DC0068DD85 /* UIkit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIkit; sourceTree = "<group>"; };
 		8B24694F2D769A7000417ADE /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		8B5D443F2D76DDEC0013BBA3 /* Style */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Style; sourceTree = "<group>"; };
+		8B84C25F2D81134900F8076C /* Object */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Object; sourceTree = "<group>"; };
 		8BB62FE02D5B251E0017D57A /* Resource */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resource; sourceTree = "<group>"; };
 		8BD412C72D75781C0017A697 /* Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Data; sourceTree = "<group>"; };
 		8BD412C82D7578220017A697 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2468C32D7690C900417ADE /* RealmSwift in Frameworks */,
+				8B19A30E2D7C0DEB00CD6DB7 /* YouTubeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 		8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8B84C25F2D81134900F8076C /* Object */,
 				8B5D443F2D76DDEC0013BBA3 /* Style */,
 				8B24694F2D769A7000417ADE /* ViewModel */,
 				8BD412CA2D75784D0017A697 /* View */,
@@ -127,6 +131,7 @@
 				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
 				8B24694F2D769A7000417ADE /* ViewModel */,
 				8B5D443F2D76DDEC0013BBA3 /* Style */,
+				8B84C25F2D81134900F8076C /* Object */,
 				8BB62FE02D5B251E0017D57A /* Resource */,
 				8BD412C72D75781C0017A697 /* Data */,
 				8BD412C82D7578220017A697 /* Model */,
@@ -136,6 +141,7 @@
 			name = MusicPlayer;
 			packageProductDependencies = (
 				8B2468C22D7690C900417ADE /* RealmSwift */,
+				8B19A30D2D7C0DEB00CD6DB7 /* YouTubeKit */,
 			);
 			productName = MusicPlayer;
 			productReference = 8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */;
@@ -149,7 +155,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					8BD9DBF12B8AEFBA0039EB71 = {
 						CreatedOnToolsVersion = 15.1;
@@ -158,15 +164,17 @@
 			};
 			buildConfigurationList = 8BD9DBED2B8AEFBA0039EB71 /* Build configuration list for PBXProject "MusicPlayer" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 8BD9DBE92B8AEFBA0039EB71;
 			packageReferences = (
 				8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				8B19A30C2D7C0DEB00CD6DB7 /* XCRemoteSwiftPackageReference "YouTubeKit" */,
 			);
 			productRefGroup = 8BD9DBF32B8AEFBA0039EB71 /* Products */;
 			projectDirPath = "";
@@ -331,11 +339,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "몽실이음악앱";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,11 +372,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "몽실이음악앱";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -405,6 +417,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8B19A30C2D7C0DEB00CD6DB7 /* XCRemoteSwiftPackageReference "YouTubeKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexeichhorn/YouTubeKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.6;
+			};
+		};
 		8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa";
@@ -416,6 +436,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8B19A30D2D7C0DEB00CD6DB7 /* YouTubeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B19A30C2D7C0DEB00CD6DB7 /* XCRemoteSwiftPackageReference "YouTubeKit" */;
+			productName = YouTubeKit;
+		};
 		8B2468C22D7690C900417ADE /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */;

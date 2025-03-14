@@ -15,7 +15,7 @@ class YouTubeSearchViewModel: ObservableObject {
         guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         // API 키를 발급받아 여기에 입력하세요.
         let apiKey = "AIzaSyB81R-wQ4SPckDeFHA2c2weg0OiRQM4_ro"
-        let urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(encodedQuery)&type=video&maxResults=10&key=\(apiKey)"
+        let urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(encodedQuery)&type=video&maxResults=20&key=\(apiKey)"
         
         guard let url = URL(string: urlString) else { return }
         

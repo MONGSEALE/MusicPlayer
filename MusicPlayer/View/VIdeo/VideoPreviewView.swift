@@ -25,8 +25,11 @@ struct VideoPreviewView: View {
                         .frame(height: 300)
                         .onAppear { player.play() }
                 } else {
-                    Text("로딩중")
-                        .foregroundColor(.white)
+                    ZStack{
+                        Text("로딩중...")
+                            .foregroundColor(.white)
+                    }
+                    .frame(height:300)
                 }
                 MarqueeText(
                     text: video?.title ?? "" ,

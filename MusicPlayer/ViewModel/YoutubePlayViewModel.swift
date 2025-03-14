@@ -54,7 +54,6 @@ class YoutubePlayViewModel : ObservableObject {
                       self.player = AVPlayer(url: progressiveStream.url)
                       self.extractedVideo = playerItem
                       self.isButtonEnabled = true
-                      print("첫번째 Player 바뀜: \(String(describing: player))")
                   }
                   return
               }
@@ -130,7 +129,6 @@ class YoutubePlayViewModel : ObservableObject {
                   self.player = AVPlayer(playerItem: playerItem)
                   self.extractedVideo = playerItem
                   self.isButtonEnabled = true
-                  print("두번째 Player 바뀜: \(String(describing: player))")
               }
           } catch {
               print("에러 발생: \(error)")
@@ -154,7 +152,6 @@ class YoutubePlayViewModel : ObservableObject {
                                let playerItem = AVPlayerItem(url: progressiveStream.url)
                                await MainActor.run {
                                    YoutubePlayViewModel.playerItemCache[videoID] = playerItem
-                                   print("progressive 스트림 사용 for \(videoID): \(playerItem)")
                                }
                                return
                            }
@@ -230,7 +227,6 @@ class YoutubePlayViewModel : ObservableObject {
 
                            await MainActor.run {
                                YoutubePlayViewModel.playerItemCache[videoID] = playerItem
-                               print("adaptive 스트림 사용 for \(videoID): \(playerItem)")
                            }
                        } catch {
                            print("에러 발생: \(error) for \(videoID)")

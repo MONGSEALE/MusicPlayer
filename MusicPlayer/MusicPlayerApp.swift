@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import AVFoundation
+
 
 @main
 struct MusicPlayerApp: App {
     @State var isSplashOn : Bool = true
     @StateObject var youtubePlayViewModel = YoutubePlayViewModel()
+    @Environment(\.scenePhase) var scenePhase
+    
+    
     var body: some Scene {
         WindowGroup {
             if (isSplashOn == true){
@@ -20,7 +25,23 @@ struct MusicPlayerApp: App {
                 MainView(youtubePlayViewModel: youtubePlayViewModel)
             }
         }
+        .onChange(of: scenePhase) {
+            if scenePhase == .background {
+                print("ScenePhase: 백그라운드 진입")
+                if(youtubePlayViewModel.isPlaying == true){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                        
+                        youtubePlayViewModel.player?.play()
+                        
+                    }
+                }
+            } else if scenePhase == .active {
+                print("ScenePhase: 포그라운드 진입")
+
+            }
+        }
     }
 }
+
 
 

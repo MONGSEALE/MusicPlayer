@@ -82,12 +82,12 @@ struct VideoListView: View {
                                 .padding()
                                 .background(
                                     Circle()
-                                        .fill(Color.blue)
+                                        .fill(Color.cyan)
                                         .frame(width: 60, height: 60)
                                 )
                                 .padding()
                         }
-                        .offset(y: -startingOffset * 0.2)
+                        .offset(y: -startingOffset * 0.15)
                     }
                 }
                 if (selectedVideo != nil){
@@ -147,7 +147,7 @@ struct VideoListView: View {
                 youtubePlayViewModel.player = nil
                 Task{
                     guard let selectedVideo = selectedVideo else { return }
-                    youtubePlayViewModel.playVideo(videoID: selectedVideo.id)
+                    youtubePlayViewModel.setVideoPlayer(videoID: selectedVideo.id)
                 }
             }
         }

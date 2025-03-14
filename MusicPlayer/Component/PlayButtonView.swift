@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MusicButtonView: View {
+struct PlayButtonView: View {
     var image : String
     var body: some View {
             Image(systemName: image)
@@ -24,5 +24,5 @@ struct MusicButtonView: View {
 }
 
 #Preview {
-    MusicButtonView(image: "")
+    PlayButtonView(image: "")
 }

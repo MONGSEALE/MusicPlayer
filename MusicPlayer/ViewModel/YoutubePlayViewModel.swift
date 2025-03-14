@@ -12,12 +12,32 @@ import RealmSwift
 
 class YoutubePlayViewModel : ObservableObject {
     
-    @Published var player : AVPlayer? = nil
+    @Published var player: AVPlayer? = nil {
+          didSet {
+              // player가 변경되면 기존 관찰을 취소하고 새로 설정
+              timeControlStatusObservation?.invalidate()
+              if let player = player {
+                  observePlayerStatus(for: player)
+              }
+          }
+      }
     @Published var isButtonEnabled : Bool = false
     @Published var showSuccessToastMessage : Bool = false
     @Published var showErrorToastMessage : Bool = false
+    @Published var isPlaying : Bool = true
     static private var playerItemCache: [String: AVPlayerItem] = [:]
     private var extractedVideo : AVPlayerItem? = nil
+    
+    private var timeControlStatusObservation: NSKeyValueObservation?
+     
+     private func observePlayerStatus(for player: AVPlayer) {
+         // AVPlayer의 timeControlStatus를 관찰하여 isPlaying을 업데이트
+         timeControlStatusObservation = player.observe(\.timeControlStatus, options: [.new, .initial]) { [weak self] player, change in
+             DispatchQueue.main.async {
+                 self?.isPlaying = (player.timeControlStatus == .playing)
+             }
+         }
+     }
     
     func extractVideo(videoID: String) async {
         await MainActor.run{
@@ -220,7 +240,7 @@ class YoutubePlayViewModel : ObservableObject {
            }
        }
 
-    func playVideo(videoID: String) {
+    func setVideoPlayer(videoID: String) {
         self.player = nil
         if let cachedItem = YoutubePlayViewModel.playerItemCache[videoID] {
             let newItem = AVPlayerItem(asset: cachedItem.asset)

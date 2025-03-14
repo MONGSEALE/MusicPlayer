@@ -44,20 +44,12 @@ struct MainView: View {
                     Image(systemName: "music.note")
                     Text("음악")
                 }
-            
             VideoListView(youtubePlayViewModel: youtubePlayViewModel)
                 .tabItem {
                     Image(systemName: "video")
                     Text("영상")
                 }
         }
-//        .onAppear{
-//            Task{
-//                print("extractVideos 함수 실행")
-//              await youtubePlayViewModel.extractVideos(videoIDs: convertedIDs)
-//                print("extractVideos 함수 완료됨")
-//            }
-//        }
     }
 }
 

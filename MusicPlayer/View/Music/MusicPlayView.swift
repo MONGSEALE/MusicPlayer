@@ -96,24 +96,24 @@ struct MusicPlayView: View {
                                 self.currentSongIndex! -= 1
                             }
                         } label: {
-                            MusicButtonView(image: "backward.fill")
+                            PlayButtonView(image: "backward.fill")
                         }
                         Button {
                             isPlaying ? stopAudio() : playAudio()
                         } label: {
-                            MusicButtonView(image: isPlaying ? "pause.fill" : "play.fill")
+                            PlayButtonView(image: isPlaying ? "pause.fill" : "play.fill")
                         }
                         Button {
                             if currentSongIndex ?? 0 < songs.count - 1 {  // currentMusicPage 수정
                                 self.currentSongIndex! += 1
                             }
                         } label: {
-                            MusicButtonView(image: "forward.fill")
+                            PlayButtonView(image: "forward.fill")
                         }
                         Button {
                             isRepeated.toggle()
                         } label: {
-                            MusicButtonView(image: isRepeated ? "repeat.1" : "repeat")
+                            PlayButtonView(image: isRepeated ? "repeat.1" : "repeat")
                         }
                     }
                     .padding(.top, 25)

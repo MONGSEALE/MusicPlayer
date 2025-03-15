@@ -38,6 +38,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8B1B9CBF2D5CB8DC0068DD85 /* UIkit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIkit; sourceTree = "<group>"; };
 		8B24694F2D769A7000417ADE /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		8B53C3A32D84152A0090FB02 /* Animation */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Animation; sourceTree = "<group>"; };
 		8B5D443F2D76DDEC0013BBA3 /* Style */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Style; sourceTree = "<group>"; };
 		8B84C25F2D81134900F8076C /* Object */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Object; sourceTree = "<group>"; };
 		8BB62FE02D5B251E0017D57A /* Resource */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resource; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8B53C3A32D84152A0090FB02 /* Animation */,
 				8B84C25F2D81134900F8076C /* Object */,
 				8B5D443F2D76DDEC0013BBA3 /* Style */,
 				8B24694F2D769A7000417ADE /* ViewModel */,
@@ -130,6 +132,7 @@
 			fileSystemSynchronizedGroups = (
 				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
 				8B24694F2D769A7000417ADE /* ViewModel */,
+				8B53C3A32D84152A0090FB02 /* Animation */,
 				8B5D443F2D76DDEC0013BBA3 /* Style */,
 				8B84C25F2D81134900F8076C /* Object */,
 				8BB62FE02D5B251E0017D57A /* Resource */,

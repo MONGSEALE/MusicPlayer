@@ -20,9 +20,12 @@ struct SplashView: View {
     var body: some View {
         VStack{
             Spacer()
-            Text("저장한 음악 가져오는중...")
-                .foregroundStyle(.white)
-                .fontWeight(.semibold)
+            VStack(spacing:50){
+                BookPagesView(animationStarted: .constant(true), animationDuration: 0.5)
+                Text("저장한 음악 가져오는중...")
+                    .foregroundStyle(.white)
+                    .fontWeight(.semibold)
+            }
                 .frame(maxWidth: .infinity, maxHeight: 200)
             Spacer()
         }

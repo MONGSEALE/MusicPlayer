@@ -8,10 +8,11 @@
 import Foundation
 
 
-struct Video: Identifiable, Decodable,Equatable {
+struct Video: Identifiable, Decodable, Equatable {
     let id: String
     let title: String
     let thumbnail: URL
+    let channelTitle: String  // 채널 이름 추가
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -23,7 +24,7 @@ struct Video: Identifiable, Decodable,Equatable {
     }
     
     enum SnippetKeys: String, CodingKey {
-        case title, thumbnails
+        case title, thumbnails, channelTitle
     }
     
     enum ThumbnailsKeys: String, CodingKey {
@@ -41,9 +42,10 @@ struct Video: Identifiable, Decodable,Equatable {
         let idContainer = try container.nestedContainer(keyedBy: IDKeys.self, forKey: .id)
         id = try idContainer.decode(String.self, forKey: .videoId)
         
-        // snippet 내의 제목과 썸네일 정보
+        // snippet 내의 제목, 채널 이름, 썸네일 정보
         let snippetContainer = try container.nestedContainer(keyedBy: SnippetKeys.self, forKey: .snippet)
         title = try snippetContainer.decode(String.self, forKey: .title)
+        channelTitle = try snippetContainer.decode(String.self, forKey: .channelTitle) // 채널 이름 디코딩
         
         let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: ThumbnailsKeys.self, forKey: .thumbnails)
         let mediumContainer = try thumbnailsContainer.nestedContainer(keyedBy: MediumKeys.self, forKey: .medium)
@@ -51,5 +53,6 @@ struct Video: Identifiable, Decodable,Equatable {
         thumbnail = URL(string: thumbnailString) ?? URL(string: "https://")!
     }
 }
+
 
 

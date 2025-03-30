@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct YouTubeAPIResponse: Decodable {
     let items: [Video]
 }

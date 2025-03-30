@@ -54,7 +54,7 @@ struct MusicListView: View {
                         }
                     }
                 }
-                .padding(.bottom,80)
+                .padding(.bottom,100)
                 .blur(radius: computedBlur)
                 .allowsHitTesting(bottomSheetHeight ?? 90 == 90 )
                 BottomMusicSheet(currentSong: $currentSong, song: $selectedSong, currentHeight: $bottomSheetHeight)

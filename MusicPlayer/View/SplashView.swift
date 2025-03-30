@@ -16,26 +16,46 @@ struct SplashView: View {
         videos.map { Video(from: $0).id }
     }
     @State private var isAnimating = false
-
+    @State private var toLoadingView : Bool = false
+    
     var body: some View {
-        VStack{
-            Spacer()
-            VStack(spacing:50){
-                BookPagesView(animationStarted: .constant(true), animationDuration: 0.5)
-                Text("저장한 음악 가져오는중...")
-                    .foregroundStyle(.white)
-                    .fontWeight(.semibold)
+        ZStack{
+            if(toLoadingView == true){
+                VStack{
+                    Spacer()
+                    VStack(spacing:50){
+                        BookPagesView(animationStarted: .constant(true), animationDuration: 0.5)
+                        Text("저장한 음악 가져오는중...")
+                            .foregroundStyle(.white)
+                            .fontWeight(.semibold)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 200)
+                    Spacer()
+                }
+                .background(GrayGradient())
+                .borderLoadingAnimation(isAnimating: $isAnimating)
+                .ignoresSafeArea()
+                .onAppear{
+                    withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
+                        isAnimating = true
+                    }
+                }
             }
-                .frame(maxWidth: .infinity, maxHeight: 200)
-            Spacer()
+            else{
+                ZStack{
+                    Image("IconImage")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 256)
+                        .onAppear{
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                toLoadingView = true
+                            }
+                        }
+                }
+            }
         }
-        .background(GrayGradient())
-        .ignoresSafeArea()
-        .borderLoadingAnimation(isAnimating: $isAnimating)
         .onAppear{
-            withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
-                          isAnimating = true
-                      }
             Task{
                 isSplashOn = true
                 await youtubePlayViewModel.extractAndStoreVideos(videoIDs: convertedIDs)
@@ -61,12 +81,12 @@ struct BorderLoadingAnimation: ViewModifier, Animatable {
     
     private let lineWidth: CGFloat = 5
     @State private var hasTopSafeAreaInset: Bool = false
-
+    
     var animatableData: Bool {
         get { isAnimating }
         set { isAnimating = newValue }
     }
-
+    
     func body(content: Content) -> some View {
         content
             .overlay(

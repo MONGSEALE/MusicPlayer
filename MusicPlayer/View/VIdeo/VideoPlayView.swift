@@ -23,7 +23,9 @@ struct VideoPlayView: View {
     @ObservedObject var youtubePlayViewModel : YoutubePlayViewModel
     @Binding var index : Int
     @Binding var maxIndex : Int
+    @Binding var youtubeURL : URL?
     @State private var isRepeated : Bool = false
+    @ObservedObject var youtubeSearchViewModel : YouTubeSearchViewModel
     
     var body: some View {
         // 전체 오프셋을 계산하여 progress(0: 최소상태, 1: 완전히 열린 상태)로 변환
@@ -102,7 +104,6 @@ struct VideoPlayView: View {
                         }
                         Spacer()
                     }
-                    
                 }
                 .frame(height: 56)
             }
@@ -126,19 +127,46 @@ struct VideoPlayView: View {
                         }
                         .frame(height: 300)
                     }
-                    MarqueeText(
-                        text: video?.title ?? "기본 텍스트",
-                        font: UIFont.preferredFont(forTextStyle: .title2),
-                        leftFade: 16,
-                        rightFade: 16,
-                        startDelay: 1,
-                        fontWeight: .semibold,
-                        foregroundStyle: .white
-                    )
-                    .id(endOffset == -startingOffset ? "fullyOpen" : "notFullyOpen")
+                    VStack(spacing:20){
+                        MarqueeText(
+                            text: video?.title ?? "기본 텍스트",
+                            font: UIFont.preferredFont(forTextStyle: .title2),
+                            leftFade: 16,
+                            rightFade: 16,
+                            startDelay: 1,
+                            fontWeight: .semibold,
+                            foregroundStyle: .white
+                        )
+                        .id(endOffset == -startingOffset ? "fullyOpen" : "notFullyOpen")
+                        HStack{
+                            Text(video?.channelTitle ?? "")
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.gray)
+                            Spacer()
+                        }
+                        HStack(spacing:20){
+                            Text("조회수 \(formattedCount(youtubeSearchViewModel.videoDetail?.viewCount))")
+                                .customCapsule()
+                            HStack{
+                                Image(systemName: "hand.thumbsup")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20)
+                                    .foregroundStyle(.white)
+                                Text(formattedCount(youtubeSearchViewModel.videoDetail?.likeCount))
+                            }
+                            .customCapsule()
+                            if let youtubeURL = youtubeURL {
+                                ShareLink(item: youtubeURL) {
+                                    Text("공유하기")
+                                        .customCapsule()
+                                }
+                            }
+                            Spacer()
+                        }
+                    }
                     .padding()
                 }
-                Spacer()
                 HStack{
                     Spacer()
                     Button{

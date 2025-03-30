@@ -18,6 +18,8 @@ struct VideoListView: View {
     @State var index : Int = 0
     @State private var maxIndex : Int = 0
     @ObservedObject var youtubePlayViewModel : YoutubePlayViewModel
+    @StateObject var youtubeSearchViewModel  = YouTubeSearchViewModel()
+    @State private var youtubeURL : URL? = nil
     var convertedVideos: [Video] {
         videos.map { Video(from: $0) }
     }
@@ -54,14 +56,12 @@ struct VideoListView: View {
                                 .truncationMode(.tail)
                             Spacer()
                         }
-                   //     .listRowBackground(Color(UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)))
                         .onTapGesture {
                             selectedVideo = video
                             if let selectedIndex = convertedVideos.firstIndex(where: { $0.id == video.id }) {
                                 index = selectedIndex
                             }
                         }
-                      //  .background(video == selectedVideo ? Color(red: 0.3, green: 0.3, blue: 0.3) : Color(red: 0.2, green: 0.2, blue: 0.2))
                         .listRowBackground(video == selectedVideo ? Color(red: 0.3, green: 0.3, blue: 0.3) : Color(red: 0.2, green: 0.2, blue: 0.2))
                     }
                     .onDelete(perform: $videos.remove)
@@ -91,7 +91,7 @@ struct VideoListView: View {
                     }
                 }
                 if (selectedVideo != nil){
-                    VideoPlayView(video: $selectedVideo,startingOffset: $startingOffset,currentOffset: $currentOffset,endOffset: $endOffset,youtubePlayViewModel: youtubePlayViewModel,index : $index,maxIndex: $maxIndex)
+                    VideoPlayView(video: $selectedVideo,startingOffset: $startingOffset,currentOffset: $currentOffset,endOffset: $endOffset,youtubePlayViewModel: youtubePlayViewModel,index : $index,maxIndex: $maxIndex,youtubeURL:$youtubeURL,youtubeSearchViewModel:youtubeSearchViewModel)
                         .background(GrayGradient())
                         .offset(y:startingOffset)
                         .offset(y:currentOffset)
@@ -145,9 +145,12 @@ struct VideoListView: View {
             }
             .onChange(of:selectedVideo){
                 youtubePlayViewModel.player = nil
+                youtubeSearchViewModel.videoDetail = nil
                 Task{
                     guard let selectedVideo = selectedVideo else { return }
                     youtubePlayViewModel.setVideoPlayer(videoID: selectedVideo.id)
+                    youtubeSearchViewModel.getVideoDetail(videoID: selectedVideo.id)
+                    youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(selectedVideo.id)")
                 }
             }
         }
@@ -159,6 +162,7 @@ extension Video {
         self.id = object.id
         self.title = object.title
         self.thumbnail = URL(string: object.thumbnailURL) ?? URL(string:"https://")!
+        self.channelTitle = object.channelTitle
     }
 }
 

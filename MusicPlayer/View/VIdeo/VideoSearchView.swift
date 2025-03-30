@@ -72,8 +72,11 @@ struct VideoSearchView: View {
                 youtubeSearchViewModel.fetchVideos(query: searchText)
             }
             .sheet(isPresented: $isSheetOn){
-                VideoPreviewView(video: $selectedVideo,youtubePlayViewModel: youtubePlayViewModel)
+                VideoPreviewView(video: $selectedVideo,youtubePlayViewModel: youtubePlayViewModel,youtubeSearchViewModel: youtubeSearchViewModel)
                     .presentationDetents([.fraction(0.7)])
+                    .onAppear{
+                        youtubeSearchViewModel.getVideoDetail(videoID: selectedVideo?.id ?? "")
+                    }
             }
             .onChange(of:isSheetOn){
                 if(isSheetOn==false){

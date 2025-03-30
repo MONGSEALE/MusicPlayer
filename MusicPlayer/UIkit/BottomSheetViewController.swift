@@ -17,12 +17,12 @@ class BottomSheetViewController: UIViewController {
     
     // 전체 높이와 처음 노출되는 높이 설정
     let bottomSheetTotalHeight: CGFloat = UIScreen.main.bounds.height * 0.8
-    let bottomSheetVisibleHeight: CGFloat = 90
+    let bottomSheetVisibleHeight: CGFloat = 100
     
     // ContentView에서 전달받을 데이터
     var song: SongModel? = nil
     var currentSongIndexBinding: Binding<Int?> = .constant(0)
-    var currentHeightBinding: Binding<CGFloat?> = .constant(90)
+    var currentHeightBinding: Binding<CGFloat?> = .constant(100)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class BottomSheetViewController: UIViewController {
         bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bottomSheetView)
         // 상단 모서리만 둥글게 처리
-        bottomSheetView.layer.cornerRadius = 16
+     //   bottomSheetView.layer.cornerRadius = 16
         bottomSheetView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         bottomSheetView.clipsToBounds = true
 

@@ -32,7 +32,7 @@ struct MusicPlayView: View {
     @State private var audioDelegate: AudioPlayerDelegate?
     @State private var isRepeated: Bool = false
     private let sheetTotalHeight = UIScreen.main.bounds.height * 0.8
-    private let sheetVisibleHeight: CGFloat = 90
+    private let sheetVisibleHeight: CGFloat = 100
     private var maxSheetHeight: CGFloat {
         sheetTotalHeight - sheetVisibleHeight
     }

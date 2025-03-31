@@ -11,6 +11,7 @@ import RealmSwift
 import YouTubeKit
 import AVKit
 import MediaPlayer
+import Combine
 
 
 
@@ -26,6 +27,7 @@ struct VideoPlayView: View {
     @Binding var youtubeURL : URL?
     @State private var isRepeated : Bool = false
     @ObservedObject var youtubeSearchViewModel : YouTubeSearchViewModel
+    @State private var playerEndCancellable: AnyCancellable?
     
     var body: some View {
         // 전체 오프셋을 계산하여 progress(0: 최소상태, 1: 완전히 열린 상태)로 변환
@@ -38,20 +40,43 @@ struct VideoPlayView: View {
                 ZStack{
                     if let player = youtubePlayViewModel.player {
                         VideoPlayer(player: player)
-                            .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { notification in
-                                if(isRepeated == true){
-                                    if let player = youtubePlayViewModel.player {
-                                        player.seek(to: .zero) { _ in
-                                            player.play()
+//                            .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { notification in
+//                                if(isRepeated == true){
+//                                    if let player = youtubePlayViewModel.player {
+//                                        player.seek(to: .zero) { _ in
+//                                            player.play()
+//                                        }
+//                                    }
+//                                }
+//                                else{
+//                                    if (index < maxIndex){
+//                                        youtubePlayViewModel.player = nil
+//                                        index = index + 1
+//                                    }
+//                                }
+//                            }
+                            .onAppear {
+                                // onAppear 시 구독 생성
+                                playerEndCancellable = NotificationCenter.default
+                                    .publisher(for: .AVPlayerItemDidPlayToEndTime)
+                                    .sink { _ in
+                                        if isRepeated {
+                                            // 반복 재생 처리
+                                            player.seek(to: .zero) { _ in
+                                                player.play()
+                                            }
+                                        } else {
+                                            if index < maxIndex {
+                                                youtubePlayViewModel.player = nil
+                                                index = index + 1
+                                            }
                                         }
                                     }
-                                }
-                                else{
-                                    if (index < maxIndex){
-                                        youtubePlayViewModel.player = nil
-                                        index = index + 1
-                                    }
-                                }
+                            }
+                            .onDisappear {
+                                // onDisappear 시 구독 해제
+                                playerEndCancellable?.cancel()
+                                playerEndCancellable = nil
                             }
                     }
                 }
@@ -158,8 +183,12 @@ struct VideoPlayView: View {
                             .customCapsule()
                             if let youtubeURL = youtubeURL {
                                 ShareLink(item: youtubeURL) {
-                                    Text("공유하기")
-                                        .customCapsule()
+                                    HStack{
+                                        Image(systemName: "arrowshape.turn.up.right")
+                                        Text("공유")
+                                            .fontWeight(.semibold)
+                                    }
+                                    .customCapsule()
                                 }
                             }
                             Spacer()
@@ -218,56 +247,6 @@ struct VideoPlayView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .opacity(progress)
         }
-    }
-    
-    func setupRemoteCommands(for player: AVPlayer) {
-        let commandCenter = MPRemoteCommandCenter.shared()
-        
-        commandCenter.playCommand.addTarget { event in
-            player.play()
-            // 재생 시작 시 최신 Now Playing 정보를 업데이트
-            updateNowPlayingInfo(title: "비디오 제목", imageURL: URL(string: "https://i.ytimg.com/vi/MuGILtV4cUk/mqdefault.jpg")!, player: player)
-            return .success
-        }
-        
-        commandCenter.pauseCommand.addTarget { event in
-            player.pause()
-            return .success
-        }
- 
-    }
-    
-    // Now Playing 정보 업데이트 함수 (비동기적으로 이미지 로드)
-    func updateNowPlayingInfo(title: String, imageURL: URL, player: AVPlayer) {
-        URLSession.shared.dataTask(with: imageURL) { data, response, error in
-            guard let data = data, let image = UIImage(data: data) else {
-                print("이미지 로드 실패: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            // 요청된 크기에 맞춰 artwork를 생성
-            let artwork = MPMediaItemArtwork(boundsSize: image.size) { requestedSize in
-                // 필요 시 여기서 이미지 리사이징을 할 수 있음
-                return image
-            }
-            
-            // 재생 시간, 경과 시간, 재생 속도 등 추가 메타데이터도 포함
-            let duration = player.currentItem?.duration.seconds ?? 0
-            let elapsed = player.currentTime().seconds
-            let playbackRate = player.rate
-            
-            let nowPlayingInfo: [String: Any] = [
-                MPMediaItemPropertyTitle: title,
-                MPMediaItemPropertyArtwork: artwork,
-                MPMediaItemPropertyPlaybackDuration: duration,
-                MPNowPlayingInfoPropertyElapsedPlaybackTime: elapsed,
-                MPNowPlayingInfoPropertyPlaybackRate: playbackRate
-            ]
-            
-            DispatchQueue.main.async {
-                MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
-                print("Now Playing 정보 업데이트됨: \(nowPlayingInfo)")
-            }
-        }.resume()
     }
     
 }

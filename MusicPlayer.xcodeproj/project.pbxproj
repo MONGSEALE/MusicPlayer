@@ -10,6 +10,7 @@
 		8B19A30E2D7C0DEB00CD6DB7 /* YouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B19A30D2D7C0DEB00CD6DB7 /* YouTubeKit */; };
 		8B2468C32D7690C900417ADE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2468C22D7690C900417ADE /* RealmSwift */; };
 		8B2469982D76A27200417ADE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8B2468C22D7690C900417ADE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8BB362F12D9A3BAF009EC0A4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8BB362F02D9A3BAF009EC0A4 /* Lottie */; };
 		8BD9DBF62B8AEFBA0039EB71 /* MusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9DBF52B8AEFBA0039EB71 /* MusicPlayerApp.swift */; };
 		8BD9DBFD2B8AEFBB0039EB71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD9DBFC2B8AEFBB0039EB71 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -38,9 +39,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8B1B9CBF2D5CB8DC0068DD85 /* UIkit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UIkit; sourceTree = "<group>"; };
 		8B24694F2D769A7000417ADE /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
-		8B53C3A32D84152A0090FB02 /* Animation */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Animation; sourceTree = "<group>"; };
 		8B5D443F2D76DDEC0013BBA3 /* Style */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Style; sourceTree = "<group>"; };
 		8B84C25F2D81134900F8076C /* Object */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Object; sourceTree = "<group>"; };
+		8BB361B72D9A3392009EC0A4 /* LottieJSON */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LottieJSON; sourceTree = "<group>"; };
 		8BB62FE02D5B251E0017D57A /* Resource */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resource; sourceTree = "<group>"; };
 		8BD412C72D75781C0017A697 /* Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Data; sourceTree = "<group>"; };
 		8BD412C82D7578220017A697 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 			files = (
 				8B2468C32D7690C900417ADE /* RealmSwift in Frameworks */,
 				8B19A30E2D7C0DEB00CD6DB7 /* YouTubeKit in Frameworks */,
+				8BB362F12D9A3BAF009EC0A4 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +90,7 @@
 		8BD9DBF42B8AEFBA0039EB71 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				8B53C3A32D84152A0090FB02 /* Animation */,
+				8BB361B72D9A3392009EC0A4 /* LottieJSON */,
 				8B84C25F2D81134900F8076C /* Object */,
 				8B5D443F2D76DDEC0013BBA3 /* Style */,
 				8B24694F2D769A7000417ADE /* ViewModel */,
@@ -132,9 +134,9 @@
 			fileSystemSynchronizedGroups = (
 				8B1B9CBF2D5CB8DC0068DD85 /* UIkit */,
 				8B24694F2D769A7000417ADE /* ViewModel */,
-				8B53C3A32D84152A0090FB02 /* Animation */,
 				8B5D443F2D76DDEC0013BBA3 /* Style */,
 				8B84C25F2D81134900F8076C /* Object */,
+				8BB361B72D9A3392009EC0A4 /* LottieJSON */,
 				8BB62FE02D5B251E0017D57A /* Resource */,
 				8BD412C72D75781C0017A697 /* Data */,
 				8BD412C82D7578220017A697 /* Model */,
@@ -145,6 +147,7 @@
 			packageProductDependencies = (
 				8B2468C22D7690C900417ADE /* RealmSwift */,
 				8B19A30D2D7C0DEB00CD6DB7 /* YouTubeKit */,
+				8BB362F02D9A3BAF009EC0A4 /* Lottie */,
 			);
 			productName = MusicPlayer;
 			productReference = 8BD9DBF22B8AEFBA0039EB71 /* MusicPlayer.app */;
@@ -178,6 +181,7 @@
 			packageReferences = (
 				8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				8B19A30C2D7C0DEB00CD6DB7 /* XCRemoteSwiftPackageReference "YouTubeKit" */,
+				8BB362EF2D9A3BAF009EC0A4 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 8BD9DBF32B8AEFBA0039EB71 /* Products */;
 			projectDirPath = "";
@@ -436,6 +440,14 @@
 				kind = branch;
 			};
 		};
+		8BB362EF2D9A3BAF009EC0A4 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -448,6 +460,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B2468BF2D7690C900417ADE /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		8BB362F02D9A3BAF009EC0A4 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BB362EF2D9A3BAF009EC0A4 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

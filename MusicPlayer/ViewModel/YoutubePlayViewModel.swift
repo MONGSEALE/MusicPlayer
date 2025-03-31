@@ -47,6 +47,8 @@ class YoutubePlayViewModel : ObservableObject {
               // YouTubeKit을 통해 스트림 전체를 추출합니다.
               let streams = try await YouTube(videoID: videoID, methods: [.local, .remote]).streams
 
+              if Task.isCancelled { return }
+              
               // 1. progressive 스트림 먼저 시도
               if let progressiveStream = streams.filterVideoAndAudio().highestResolutionStream() {
                   let playerItem = AVPlayerItem(url: progressiveStream.url)
@@ -82,6 +84,8 @@ class YoutubePlayViewModel : ObservableObject {
                   }
                   try await innerGroup.waitForAll()
               }
+              
+              if Task.isCancelled { return }
               
               let mixComposition = AVMutableComposition()
               guard let compositionVideoTrack = mixComposition.addMutableTrack(withMediaType: .video,
@@ -124,6 +128,8 @@ class YoutubePlayViewModel : ObservableObject {
                     return
               }
 
+              if Task.isCancelled { return }
+              
               let playerItem = AVPlayerItem(asset: mixComposition)
               await MainActor.run {
                   self.player = AVPlayer(playerItem: playerItem)

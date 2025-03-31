@@ -15,7 +15,7 @@ struct CustomCapsule: ViewModifier {
             .foregroundStyle(.white)
             .padding(.vertical, 4)
             .padding(.horizontal)
-            .background(CapsuleColor())
+            .background(.white.opacity(0.1))
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }

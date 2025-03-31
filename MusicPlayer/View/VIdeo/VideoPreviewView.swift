@@ -63,8 +63,12 @@ struct VideoPreviewView: View {
                         .customCapsule()
                         if let youtubeURL = youtubeURL {
                             ShareLink(item: youtubeURL) {
-                                Text("공유")
-                                    .customCapsule()
+                                HStack{
+                                    Image(systemName: "arrowshape.turn.up.right")
+                                    Text("공유")
+                                        .fontWeight(.semibold)
+                                }
+                                .customCapsule()
                             }
                         }
                         Spacer()

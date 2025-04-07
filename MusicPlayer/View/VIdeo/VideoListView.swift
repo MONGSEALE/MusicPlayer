@@ -10,7 +10,6 @@ import RealmSwift
 
 struct VideoListView: View {
     @ObservedResults(VideoObject.self) var videos
-    @State private var toVideoSearchView : Bool = false
     @State var selectedVideo : Video? = nil
     @State private var startingOffset: CGFloat = UIScreen.main.bounds.height * 0.7
     @State private var currentOffset:CGFloat = 0
@@ -37,7 +36,7 @@ struct VideoListView: View {
             ZStack(alignment: .bottom){
                 Color(red: 0.2, green: 0.2, blue: 0.2)
                     .ignoresSafeArea()
-                List {
+                ScrollView(.vertical,showsIndicators: true) {
                     ForEach(convertedVideos) { video in
                         HStack(spacing: 10) {
                             AsyncImage(url: video.thumbnail) { image in
@@ -49,11 +48,24 @@ struct VideoListView: View {
                             }
                             .frame(width: 100, height: 56)
                             .clipped()
-                            Text(video.title)
-                                .font(.headline)
-                                .foregroundStyle(.white)
-                                .lineLimit(2)
-                                .truncationMode(.tail)
+                            .padding(.leading)
+                            VStack(alignment:.leading){
+                     
+                                    Text(video.title)
+                                        .font(.headline)
+                                        .foregroundStyle(.white)
+                                        .lineLimit(1)
+                                        .truncationMode(.tail)
+
+                                    Text(video.channelTitle)
+                                        .font(.subheadline)
+                                        .foregroundStyle(.gray)
+                                        .lineLimit(1)
+                                        .truncationMode(.tail)
+                   
+                            }
+                            .padding(.trailing)
+                            .padding(.vertical)
                             Spacer()
                         }
                         .onTapGesture {
@@ -62,34 +74,16 @@ struct VideoListView: View {
                                 index = selectedIndex
                             }
                         }
-                        .listRowBackground(video == selectedVideo ? Color(red: 0.3, green: 0.3, blue: 0.3) : Color(red: 0.2, green: 0.2, blue: 0.2))
+                        .background(video == selectedVideo ? Color(red: 0.3, green: 0.3, blue: 0.3) : Color(red: 0.2, green: 0.2, blue: 0.2)
+                        )
+                        
                     }
                     .onDelete(perform: $videos.remove)
-                }
-                .scrollContentBackground(.hidden)
-                .padding(.bottom,100)
-                VStack{
                     Spacer()
-                    HStack{
-                        Spacer()
-                        Button {
-                            toVideoSearchView = true
-                            youtubePlayViewModel.player?.pause()
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.system(size: 24, weight: .bold))
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(
-                                    Circle()
-                                        .fill(Color.cyan)
-                                        .frame(width: 60, height: 60)
-                                )
-                                .padding()
-                        }
-                        .offset(y: -startingOffset * 0.15)
-                    }
+                             .frame(height: 100)
                 }
+          
+            
                 if (selectedVideo != nil){
                     VideoPlayView(video: $selectedVideo,startingOffset: $startingOffset,currentOffset: $currentOffset,endOffset: $endOffset,youtubePlayViewModel: youtubePlayViewModel,index : $index,maxIndex: $maxIndex,youtubeURL:$youtubeURL,youtubeSearchViewModel:youtubeSearchViewModel)
                         .background(GrayGradient())
@@ -127,7 +121,6 @@ struct VideoListView: View {
             }
             .navigationTitle("저장된 영상")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(isPresented: $toVideoSearchView, destination: {VideoSearchView()})
             .onAppear{
                 maxIndex = convertedVideos.count - 1
             }
@@ -152,6 +145,9 @@ struct VideoListView: View {
                     youtubeSearchViewModel.getVideoDetail(videoID: selectedVideo.id)
                     youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(selectedVideo.id)")
                 }
+            }
+            .onDisappear{
+                youtubePlayViewModel.player?.pause()
             }
         }
     }

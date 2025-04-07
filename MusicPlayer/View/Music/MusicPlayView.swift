@@ -190,9 +190,14 @@ struct MusicPlayView: View {
         }
         .background(GrayGradient())
         .edgesIgnoringSafeArea(.all)
-        .onAppear(perform: {
-            setupAudio()
-        })
+        .onAppear {
+            if (player != nil){
+                playAudio()
+            }
+            else{
+                setupAudio()
+            }
+        }
         .onChange(of: currentSongIndex) {
             stopAudio()
             setupAudio()

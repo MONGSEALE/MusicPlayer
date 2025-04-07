@@ -36,7 +36,7 @@ struct VideoPlayView: View {
         
         ZStack {
             // 최소 상태일 때 보여줄 상단의 작은 버전
-            HStack(alignment: .top, spacing: 8) {
+            HStack {
                 ZStack{
                     if let player = youtubePlayViewModel.player {
                         VideoPlayer(player: player)
@@ -131,6 +131,7 @@ struct VideoPlayView: View {
                     }
                 }
                 .frame(height: 56)
+                .padding(.horizontal)
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

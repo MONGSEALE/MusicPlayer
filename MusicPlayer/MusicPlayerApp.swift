@@ -20,9 +20,19 @@ struct MusicPlayerApp: App {
         WindowGroup {
             if (isSplashOn == true){
                 SplashView(youtubePlayViewModel:youtubePlayViewModel,isSplashOn: $isSplashOn)
+                    .onAppear{
+                        do {
+                            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+                            try AVAudioSession.sharedInstance().setActive(true)
+                        } catch {
+                            print("오디오 세션 설정 실패: \(error)")
+                        }
+                    }
+                    .preferredColorScheme(.light)
             }
             else{
                 MainView(youtubePlayViewModel: youtubePlayViewModel)
+                    .preferredColorScheme(.light)
             }
         }
         .onChange(of: scenePhase) {

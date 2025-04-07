@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Video: Identifiable, Decodable, Equatable {
+struct Video: Identifiable, Decodable, Equatable ,Hashable{
     let id: String
     let title: String
     let thumbnail: URL
@@ -38,9 +38,17 @@ struct Video: Identifiable, Decodable, Equatable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
+        if let idString = try? container.decode(String.self, forKey: .id) {
+                  id = idString
+              } else {
+                  // search API의 경우처럼 id가 딕셔너리 형태라면 videoId를 추출
+                  let idContainer = try container.nestedContainer(keyedBy: IDKeys.self, forKey: .id)
+                  id = try idContainer.decode(String.self, forKey: .videoId)
+              }
+        
         // id 객체 내의 videoId
-        let idContainer = try container.nestedContainer(keyedBy: IDKeys.self, forKey: .id)
-        id = try idContainer.decode(String.self, forKey: .videoId)
+//        let idContainer = try container.nestedContainer(keyedBy: IDKeys.self, forKey: .id)
+//        id = try idContainer.decode(String.self, forKey: .videoId)
         
         // snippet 내의 제목, 채널 이름, 썸네일 정보
         let snippetContainer = try container.nestedContainer(keyedBy: SnippetKeys.self, forKey: .snippet)

@@ -64,6 +64,8 @@ struct MusicListView: View {
             }
             .navigationTitle("저장된 음악")
             .navigationBarTitleDisplayMode(.inline)
+             .toolbarBackground(.visible, for: .navigationBar)
+             .toolbarColorScheme(.dark,   for: .navigationBar)
             .onChange(of:currentSong){
                 selectedSong = SongDatas[currentSong ?? 0]
             }

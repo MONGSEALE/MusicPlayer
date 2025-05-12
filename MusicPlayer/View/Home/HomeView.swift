@@ -71,6 +71,19 @@ struct HomeView: View {
                         }
                         .padding(.vertical)
                         
+//                        VStack(spacing:0){
+//                            HStack{
+//                                Text("봄 플레이리스트")
+//                                    .fontWeight(.semibold)
+//                                    .foregroundStyle(.white)
+//                                    .font(.title2)
+//                                    .padding(.leading)
+//                                Spacer()
+//                            }
+//                            PlayListScrollView(selectedPlaylist: $selectedPlaylist, toPlaylistView: $toPlaylistView, query: "봄 플레이리스트")
+//                        }
+//                        .padding(.vertical)
+                        
                         VStack{
                             HStack{
                                 Text("인기곡 30")

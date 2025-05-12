@@ -110,7 +110,7 @@ public struct MarqueeText: View {
         }
     }
     
-    // MARK: - Marquee pair of texts
+    // MARK: - 텍스트 마퀴쌍
     @ViewBuilder
     private func makeMarqueeTexts(
         stringWidth: CGFloat,
@@ -119,7 +119,6 @@ public struct MarqueeText: View {
         animation: Animation,
         nullAnimation: Animation
     ) -> some View {
-        // 두 개의 텍스트가 서로 반대 위상으로 이동합니다.
         Group {
             Text(text)
                 .lineLimit(1)
@@ -141,7 +140,7 @@ public struct MarqueeText: View {
         }
     }
     
-    // MARK: - Fade mask
+    // MARK: - 페이드 마스크
     @ViewBuilder
     private func fadeMask(leftFade: CGFloat, rightFade: CGFloat) -> some View {
         HStack(spacing: 0) {
@@ -171,7 +170,7 @@ public struct MarqueeText: View {
         }
     }
     
-    // MARK: - Initializer
+    // MARK: - 초기화
     public init(
         text: String,
         font: UIFont,

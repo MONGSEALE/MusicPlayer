@@ -124,6 +124,8 @@ struct VideoListView: View {
             }
             .navigationTitle("저장된 영상")
             .navigationBarTitleDisplayMode(.inline)
+             .toolbarBackground(.visible, for: .navigationBar)
+             .toolbarColorScheme(.dark,   for: .navigationBar)
             .onAppear{
                 maxIndex = convertedVideos.count - 1
             }

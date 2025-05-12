@@ -14,7 +14,8 @@ struct VideoSearchView: View {
     @State private var searchText = ""
     @State private var selectedVideo : Video? = nil
     @State private var showVideoPreviewView : Bool = false
- 
+    @Environment(\.dismissSearch) private var dismissSearchAction  // 검색창 닫기 함수 :contentReference[oaicite:6]{index=6}
+    @State private var hideSearchDisplay : Bool = false
    
     init() {
         let appearance = UINavigationBarAppearance()
@@ -71,7 +72,6 @@ struct VideoSearchView: View {
             }
             .navigationTitle("유튜브 검색")
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "검색어 입력")
-         
             .searchSuggestions {
                     ForEach(youtubeSearchViewModel.suggestions, id: \.self) { suggestion in
                             Text(suggestion)
@@ -79,7 +79,12 @@ struct VideoSearchView: View {
                     }
             }
             .onSubmit(of: .search) {
+                dismissSearchAction()
                 youtubeSearchViewModel.searchVideos(query: searchText)
+                hideSearchDisplay = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    hideSearchDisplay = false
+                }
             }
             .sheet(isPresented: $showVideoPreviewView){
                 VideoPreviewView(video: $selectedVideo,youtubePlayViewModel: youtubePlayViewModel,youtubeSearchViewModel: youtubeSearchViewModel)
@@ -94,15 +99,17 @@ struct VideoSearchView: View {
                 }
             }
             .onChange(of: searchText) {
-                youtubeSearchViewModel.suggestions = []
-                let current = searchText
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if current == searchText {
-                        youtubeSearchViewModel.getSeggestion(query: current)
+                if (hideSearchDisplay == false){
+                    youtubeSearchViewModel.suggestions = []
+                    let current = searchText
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if current == searchText {
+                            youtubeSearchViewModel.getSeggestion(query: current)
+                        }
                     }
                 }
             }
-
+          
 
         }
     }

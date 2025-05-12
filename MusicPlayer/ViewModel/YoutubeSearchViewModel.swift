@@ -167,8 +167,8 @@ class YouTubeSearchViewModel: ObservableObject {
     }
     
     func getTop50Songs() {
-        // YouTube Data API의 mostPopular 엔드포인트 사용 (한국, 음악 카테고리)
-        let urlString = "https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&regionCode=KR&videoCategoryId=10&maxResults=50&part=snippet&key=\(apiKey)"
+        let urlString = "https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&regionCode=KR&videoCategoryId=10&maxResults=50&part=snippet&hl=ko&key=\(apiKey)"
+
         guard let url = URL(string: urlString) else { return }
         
         isLoading = true
@@ -188,7 +188,7 @@ class YouTubeSearchViewModel: ObservableObject {
                     self.topSongs = decodedResponse.items
                 }
             } catch {
-                print("돈까스 디코딩 오류: \(error)")
+                print("getTop50Songs 디코딩 오류: \(error)")
             }
         }.resume()
     }
@@ -211,11 +211,7 @@ class YouTubeSearchViewModel: ObservableObject {
             }
             do {
                 let response = try JSONDecoder().decode(PlaylistItemsResponse.self, from: data)
-                // PlaylistItemsResponse의 각 item의 snippet에서 필요한 정보를 추출하여 Video 객체 생성
                 let videos: [Video] = response.items.compactMap { item in
-                    // playlistItems API의 snippet과 search API의 snippet 구조가 다를 수 있으므로
-                    // Video 객체를 생성할 수 있도록 별도의 initializer를 만들어 활용하거나,
-                    // 직접 필요한 값들을 전달합니다.
                     return Video(
                         id: item.snippet.resourceId.videoId,
                         title: item.snippet.title,
@@ -234,35 +230,6 @@ class YouTubeSearchViewModel: ObservableObject {
         }.resume()
     }
     
-//    func getSeggestion(query: String) {
-//        guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-//        // 비공식 연관 검색어 엔드포인트 사용
-//        let urlString = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=\(encodedQuery)"
-//        guard let url = URL(string: urlString) else { return }
-//        
-//        isLoading = true
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            defer {
-//                DispatchQueue.main.async {
-//                    self.isLoading = false
-//                }
-//            }
-//            guard let data = data, error == nil else {
-//                print("네트워크 오류: \(error?.localizedDescription ?? "Unknown error")")
-//                return
-//            }
-//            
-//            do {
-//                let suggestionResponse = try JSONDecoder().decode(SuggestionResponse.self, from: data)
-//                DispatchQueue.main.async {
-//                    self.suggestions = suggestionResponse.suggestions
-//                    print("연관 검색어: \(self.suggestions)")
-//                }
-//            } catch {
-//                print("돈까스디코딩 오류: \(error)")
-//            }
-//        }.resume()
-//    }
     func getSeggestion(query: String) {
         guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         // 비공식 연관 검색어 엔드포인트 사용

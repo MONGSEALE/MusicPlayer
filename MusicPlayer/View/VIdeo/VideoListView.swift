@@ -34,9 +34,8 @@ struct VideoListView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom){
-                Color(red: 0.2, green: 0.2, blue: 0.2)
-                    .ignoresSafeArea()
-                ScrollView(.vertical,showsIndicators: true) {
+
+                List {
                     ForEach(convertedVideos) { video in
                         HStack(spacing: 10) {
                             AsyncImage(url: video.thumbnail) { image in
@@ -47,8 +46,7 @@ struct VideoListView: View {
                                 Color.gray
                             }
                             .frame(width: 100, height: 56)
-                            .clipped()
-                            .padding(.leading)
+                        
                             VStack(alignment:.leading){
                      
                                     Text(video.title)
@@ -64,8 +62,6 @@ struct VideoListView: View {
                                         .truncationMode(.tail)
                    
                             }
-                            .padding(.trailing)
-                            .padding(.vertical)
                             Spacer()
                         }
                         .onTapGesture {
@@ -74,16 +70,23 @@ struct VideoListView: View {
                                 index = selectedIndex
                             }
                         }
-                        .background(video == selectedVideo ? Color(red: 0.3, green: 0.3, blue: 0.3) : Color(red: 0.2, green: 0.2, blue: 0.2)
+                        .listRowBackground(video == selectedVideo ? Color(red: 0.3, green: 0.3, blue: 0.3) : Color(red: 0.2, green: 0.2, blue: 0.2)
                         )
                         
                     }
                     .onDelete(perform: $videos.remove)
-                    Spacer()
-                             .frame(height: 100)
+                    ZStack{
+    
+                    }
+                    .frame(height: 80)
+                    .listRowBackground(Color(red: 0.2, green: 0.2, blue: 0.2)
+                    )
+                      
                 }
-          
-            
+                .listStyle(GroupedListStyle())
+                .scrollContentBackground(.hidden)
+                .background(Color(red: 0.2, green: 0.2, blue: 0.2))
+                
                 if (selectedVideo != nil){
                     VideoPlayView(video: $selectedVideo,startingOffset: $startingOffset,currentOffset: $currentOffset,endOffset: $endOffset,youtubePlayViewModel: youtubePlayViewModel,index : $index,maxIndex: $maxIndex,youtubeURL:$youtubeURL,youtubeSearchViewModel:youtubeSearchViewModel)
                         .background(GrayGradient())

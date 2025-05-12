@@ -44,16 +44,15 @@ class YoutubePlayViewModel : ObservableObject {
             self.isButtonEnabled = false
         }
           do {
-              // YouTubeKit을 통해 스트림 전체를 추출합니다.
               let streams = try await YouTube(videoID: videoID, methods: [.local, .remote]).streams
 
               if Task.isCancelled { return }
               
               // 1. progressive 스트림 먼저 시도
-              if let progressiveStream = streams.filterVideoAndAudio().highestResolutionStream() {
+              if let progressiveStream = streams.filterVideoAndAudio().filter(byResolution: { $0! <= 1080 }).highestResolutionStream() {
                   let playerItem = AVPlayerItem(url: progressiveStream.url)
                   await MainActor.run {
-                      self.player = AVPlayer(url: progressiveStream.url)
+                      self.player = AVPlayer(playerItem: playerItem)
                       self.extractedVideo = playerItem
                       self.isButtonEnabled = true
                   }
@@ -61,7 +60,7 @@ class YoutubePlayViewModel : ObservableObject {
               }
               
               // 2. progressive 스트림이 없으면, adaptive 스트림으로 처리
-              guard let videoOnlyStream = streams.filterVideoOnly().highestResolutionStream(),
+              guard let videoOnlyStream = streams.filterVideoOnly().filter(byResolution: { $0! <= 1080 }).highestResolutionStream(),
                     let audioOnlyStream = streams.filterAudioOnly().highestAudioBitrateStream()
               else {
                   print("적절한 스트림을 찾지 못했습니다.")
@@ -145,7 +144,7 @@ class YoutubePlayViewModel : ObservableObject {
     func extractAndStoreVideos(videoIDs: [String]) async {
            await withTaskGroup(of: Void.self) { group in
                for videoID in videoIDs {
-                   // 이미 캐시에 있다면 건너뜁니다.
+                   // 이미 캐시에 있으면 건너뜀
                    if YoutubePlayViewModel.playerItemCache[videoID] != nil { continue }
                 
                    group.addTask {
@@ -154,7 +153,7 @@ class YoutubePlayViewModel : ObservableObject {
                            let streams = try await YouTube(videoID: videoID, methods: [.local, .remote]).streams
                            
                            // 1. progressive 스트림 먼저 시도
-                           if let progressiveStream = streams.filterVideoAndAudio().highestResolutionStream() {
+                           if let progressiveStream = streams.filterVideoAndAudio().filter(byResolution: { $0! <= 1080 }).highestResolutionStream() {
                                let playerItem = AVPlayerItem(url: progressiveStream.url)
                                await MainActor.run {
                                    YoutubePlayViewModel.playerItemCache[videoID] = playerItem
@@ -163,7 +162,7 @@ class YoutubePlayViewModel : ObservableObject {
                            }
                            
                            // 2. progressive 스트림이 없으면 adaptive 스트림 처리
-                           guard let videoOnlyStream = streams.filterVideoOnly().highestResolutionStream(),
+                           guard let videoOnlyStream = streams.filterVideoOnly().filter(byResolution: { $0! <= 1080 }).highestResolutionStream(),
                                  let audioOnlyStream = streams.filterAudioOnly().highestAudioBitrateStream()
                            else {
                                print("적절한 스트림을 찾지 못했습니다 for \(videoID)")
@@ -182,7 +181,6 @@ class YoutubePlayViewModel : ObservableObject {
                                }
                                innerGroup.addTask {
                                    _ = try await audioAsset.load(.tracks)
-                                   // audioAsset에는 .preferredTransform이 필요하지 않을 수 있습니다.
                                }
                                try await innerGroup.waitForAll()
                            }

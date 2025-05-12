@@ -21,7 +21,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color(red: 0.2, green: 0.2, blue: 0.2)
+                GrayGradient()
                     .ignoresSafeArea()
                 VStack {
                     HStack{

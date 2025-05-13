@@ -9,11 +9,12 @@ import Foundation
 import SwiftUI
 
 struct CustomCapsule: ViewModifier {
+    let font : Font
     func body(content: Content) -> some View {
         content
-            .fontWeight(.semibold)
+            .font(font)
             .foregroundStyle(.white)
-            .padding(.vertical, 4)
+            .padding(.vertical,8)
             .padding(.horizontal)
             .background(.white.opacity(0.1))
             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -22,6 +23,8 @@ struct CustomCapsule: ViewModifier {
 
 extension View {
     func customCapsule() -> some View {
-        self.modifier(CustomCapsule())
+        self.modifier(CustomCapsule(font: .caption))
     }
 }
+
+

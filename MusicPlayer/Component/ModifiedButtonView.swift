@@ -14,10 +14,11 @@ struct ModifiedButtonView: View {
         HStack{
             Spacer()
             Text(text)
+                .fontWeight(.semibold)
             Spacer()
         }
         .padding(.vertical)
-        .background(isEnabled ? .blue : .gray)
+        .background(isEnabled ? .cyan : .gray)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding()
@@ -25,5 +26,5 @@ struct ModifiedButtonView: View {
 }
 
 #Preview {
-    ModifiedButtonView(text: "저장하기",isEnabled: false)
+    ModifiedButtonView(text: "저장하기",isEnabled: true)
 }

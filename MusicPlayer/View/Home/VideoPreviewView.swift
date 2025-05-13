@@ -52,14 +52,12 @@ struct VideoPreviewView: View {
                     ScrollView(.horizontal){
                         HStack(spacing:20){
                             Text("조회수 \(formattedCount(youtubeSearchViewModel.videoDetail?.viewCount))")
+                                .fontWeight(.semibold)
                                 .customCapsule()
                             HStack{
                                 Image(systemName: "hand.thumbsup")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20)
-                                    .foregroundStyle(.white)
                                 Text(formattedCount(youtubeSearchViewModel.videoDetail?.likeCount))
+                                    .fontWeight(.semibold)
                             }
                             .customCapsule()
                             if let youtubeURL = youtubeURL {

@@ -71,18 +71,18 @@ struct HomeView: View {
                         }
                         .padding(.vertical)
                         
-//                        VStack(spacing:0){
-//                            HStack{
-//                                Text("봄 플레이리스트")
-//                                    .fontWeight(.semibold)
-//                                    .foregroundStyle(.white)
-//                                    .font(.title2)
-//                                    .padding(.leading)
-//                                Spacer()
-//                            }
-//                            PlayListScrollView(selectedPlaylist: $selectedPlaylist, toPlaylistView: $toPlaylistView, query: "봄 플레이리스트")
-//                        }
-//                        .padding(.vertical)
+                        VStack(spacing:0){
+                            HStack{
+                                Text("에너지 충전")
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.white)
+                                    .font(.title2)
+                                    .padding(.leading)
+                                Spacer()
+                            }
+                            PlayListScrollView(selectedPlaylist: $selectedPlaylist, toPlaylistView: $toPlaylistView, query: "신나는")
+                        }
+                        .padding(.vertical)
                         
                         VStack{
                             HStack{
@@ -127,9 +127,9 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    HomeView()
+//}
 
 
 struct PlayListScrollView: View {

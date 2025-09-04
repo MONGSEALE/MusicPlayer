@@ -15,6 +15,7 @@ class AudioPlayerDelegate: NSObject, AVAudioPlayerDelegate {
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
+            //오디오 재생이 끝나면 자동으로 다음 노래로 재생
             parent.moveToNextSong()
         }
     }
@@ -59,13 +60,13 @@ struct MusicPlayView: View {
                         .clipShape(Circle())
                         .padding(.top, 35)
                         .frame(height: 200)
-                    Text(song?.title ?? "")  // currentMusicPage 수정
+                    Text(song?.title ?? "")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                         .frame(height: 100)
                         .padding(.top, 10)
-                    Text(song?.artist ?? "")  // currentMusicPage 수정
+                    Text(song?.artist ?? "")
                         .font(.caption)
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
@@ -104,7 +105,7 @@ struct MusicPlayView: View {
                             PlayButtonView(image: isPlaying ? "pause.fill" : "play.fill")
                         }
                         Button {
-                            if currentSongIndex ?? 0 < songs.count - 1 {  // currentMusicPage 수정
+                            if currentSongIndex ?? 0 < songs.count - 1 {
                                 self.currentSongIndex! += 1
                             }
                         } label: {
@@ -212,16 +213,17 @@ struct MusicPlayView: View {
     }
     
     private func setupAudio() {
-        let audioFileName = song?.audioFileName  // currentMusicPage 수정
+        let audioFileName = song?.audioFileName
+        //로컬 음악파일을 url로 저장
         guard let url = Bundle.main.url(forResource: audioFileName, withExtension: "mp3") else { return }
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            audioDelegate = AudioPlayerDelegate(parent: self)
-            player?.delegate = audioDelegate
+            player = try AVAudioPlayer(contentsOf: url) //AVAudioPlayer 생성
+            audioDelegate = AudioPlayerDelegate(parent: self) //델리게이트 객체 생성 및 해당 뷰를 참조
+            player?.delegate = audioDelegate //델리게이트 할당
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
+            try AVAudioSession.sharedInstance().setActive(true) //오디오세션 활성화
             player?.prepareToPlay()
-            totalTime = player?.duration ?? 0.0
+            totalTime = player?.duration ?? 0.0 //음악 재생 길이
         } catch {
             print("오디오 로딩 에러")
         }

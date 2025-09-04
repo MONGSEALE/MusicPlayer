@@ -40,21 +40,6 @@ struct VideoPlayView: View {
                 ZStack{
                     if let player = youtubePlayViewModel.player {
                         VideoPlayer(player: player)
-//                            .onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { notification in
-//                                if(isRepeated == true){
-//                                    if let player = youtubePlayViewModel.player {
-//                                        player.seek(to: .zero) { _ in
-//                                            player.play()
-//                                        }
-//                                    }
-//                                }
-//                                else{
-//                                    if (index < maxIndex){
-//                                        youtubePlayViewModel.player = nil
-//                                        index = index + 1
-//                                    }
-//                                }
-//                            }
                             .onAppear {
                                 // onAppear 시 구독 생성
                                 playerEndCancellable = NotificationCenter.default
@@ -66,6 +51,7 @@ struct VideoPlayView: View {
                                                 player.play()
                                             }
                                         } else {
+                                            // 다음 영상으로 자동 재생
                                             if index < maxIndex {
                                                 youtubePlayViewModel.player = nil
                                                 index = index + 1
@@ -135,7 +121,7 @@ struct VideoPlayView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .opacity(1 - progress)
+            .opacity(1 - progress)  //투명도가 뷰의 높이를 올릴 수록 100%에 가까워짐
             
             // 완전히 열린 상태일 때 보여줄 중앙의 큰 버전
             VStack(spacing: 16) {
@@ -244,7 +230,7 @@ struct VideoPlayView: View {
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .opacity(progress)
+            .opacity(progress) // 투명도가 뷰의 높이를 내릴수록 100%에 가까워짐
         }
     }
     

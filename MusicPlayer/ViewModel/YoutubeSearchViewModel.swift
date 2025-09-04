@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit   // NSAttributedString을 사용하기 위해 필요
 
 class YouTubeSearchViewModel: ObservableObject {
     @Published var videos: [Video] = []
@@ -277,10 +278,10 @@ class YouTubeSearchViewModel: ObservableObject {
                         print("디코딩 오류: \(error)")
                     }
                 } else {
-                    print("EUC-KR 문자열을 UTF-8 데이터로 변환할 수 없습니다.")
+                    print("EUC-KR 문자열을 UTF-8 데이터로 변환 불가")
                 }
             } else {
-                print("데이터를 EUC-KR 문자열로 변환할 수 없습니다.")
+                print("데이터를 EUC-KR 문자열로 변환 불가")
             }
         }.resume()
     }
@@ -324,5 +325,26 @@ extension Video {
         self.title = title
         self.thumbnail = thumbnail
         self.channelTitle = channelTitle
+    }
+}
+
+
+extension String {
+    /// HTML 엔티티(예: &#39;, &amp;, &quot; 등)를 디코딩해서 일반 문자열로 반환
+    var htmlDecoded: String {
+        guard let data = self.data(using: .utf8) else {
+            return self
+        }
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+        if let attributedString = try? NSAttributedString(data: data,
+                                                          options: options,
+                                                          documentAttributes: nil) {
+            return attributedString.string
+        } else {
+            return self
+        }
     }
 }

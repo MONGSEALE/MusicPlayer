@@ -79,18 +79,17 @@ struct MusicListView: View {
 }
 
 struct BottomMusicSheet: UIViewControllerRepresentable {
-    @Binding var currentSong: Int?
-    @Binding var song: SongModel
-    @Binding var currentHeight: CGFloat?   // 새로 추가한 바인딩
+    @Binding var currentSong: Int?  //선택된 노래의 인덱스
+    @Binding var song: SongModel  //선택된 노래의 모델
+    @Binding var currentHeight: CGFloat? //현재 Sheet의 높이값
     
     func makeUIViewController(context: Context) -> BottomSheetViewController {
-        let vc = BottomSheetViewController()
+        let vc = BottomSheetViewController() //UIKit의 뷰컨트롤러
         vc.song = song
         vc.currentSongIndexBinding = $currentSong
-        vc.currentHeightBinding = $currentHeight   // 바인딩 전달
+        vc.currentHeightBinding = $currentHeight
         return vc
     }
-    
     
     func updateUIViewController(_ uiViewController: BottomSheetViewController, context: Context) {
         uiViewController.song = song

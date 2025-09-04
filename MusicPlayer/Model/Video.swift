@@ -12,7 +12,7 @@ struct Video: Identifiable, Decodable, Equatable ,Hashable{
     let id: String
     let title: String
     let thumbnail: URL
-    let channelTitle: String  // 채널 이름 추가
+    let channelTitle: String
 
     enum CodingKeys: String, CodingKey {
         case id

@@ -44,6 +44,7 @@ class YoutubePlayViewModel : ObservableObject {
             self.isButtonEnabled = false
         }
           do {
+              //YoutubeKit을 이용하여 videoID를 이용하여 stream을 불러오기
               let streams = try await YouTube(videoID: videoID, methods: [.local, .remote]).streams
 
               if Task.isCancelled { return }
@@ -58,7 +59,6 @@ class YoutubePlayViewModel : ObservableObject {
                   }
                   return
               }
-              
               // 2. progressive 스트림이 없으면, adaptive 스트림으로 처리
               guard let videoOnlyStream = streams.filterVideoOnly().filter(byResolution: { $0! <= 1080 }).highestResolutionStream(),
                     let audioOnlyStream = streams.filterAudioOnly().highestAudioBitrateStream()
@@ -258,6 +258,7 @@ class YoutubePlayViewModel : ObservableObject {
             try realm.write {
                 realm.add(videoObject, update: .modified)
             }
+            //해당 videoID를 키로 하는 playerItemCache에 영상을 저장
             YoutubePlayViewModel.playerItemCache[video.id] = extractedVideo
             showSuccessToastMessage = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -270,6 +271,7 @@ class YoutubePlayViewModel : ObservableObject {
             }
         }
     }
+    
 }
 
 extension AVMutableComposition: @unchecked @retroactive Sendable { }

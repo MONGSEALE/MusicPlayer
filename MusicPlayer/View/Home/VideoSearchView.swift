@@ -78,6 +78,17 @@ struct VideoSearchView: View {
                             .searchCompletion(suggestion)
                     }
             }
+            .onChange(of: searchText) {
+                if (hideSearchDisplay == false){
+                    youtubeSearchViewModel.suggestions = [] //연관검색어 리스트 목록 초기화
+                    let current = searchText
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if current == searchText {
+                            youtubeSearchViewModel.getSeggestion(query: current) //연관검색어 받아오는 API함수
+                        }
+                    }
+                }
+            }
             .onSubmit(of: .search) {
                 dismissSearchAction()
                 youtubeSearchViewModel.searchVideos(query: searchText)
@@ -98,19 +109,6 @@ struct VideoSearchView: View {
                     youtubePlayViewModel.player = nil
                 }
             }
-            .onChange(of: searchText) {
-                if (hideSearchDisplay == false){
-                    youtubeSearchViewModel.suggestions = []
-                    let current = searchText
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        if current == searchText {
-                            youtubeSearchViewModel.getSeggestion(query: current)
-                        }
-                    }
-                }
-            }
-          
-
         }
     }
 }
